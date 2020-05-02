@@ -53,6 +53,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tYW-I2-S1g" kind="showDetail" id="nty-hU-cRA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -78,6 +81,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="28X-hb-jdv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="tYW-I2-S1g" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="u2D-Wf-WNd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yj-N8-hIS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="139"/>
         </scene>
     </scenes>
 </document>
