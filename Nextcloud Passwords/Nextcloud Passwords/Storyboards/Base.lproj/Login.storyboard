@@ -55,7 +55,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="1m2-is-TPP" firstAttribute="top" secondItem="x2v-xV-EW4" secondAttribute="bottom" constant="210" id="6Yf-wf-jPu"/>
                             <constraint firstItem="fIU-vB-J8k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8F8-8W-FbO"/>
