@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,36 +12,39 @@
             <objects>
                 <viewController storyboardIdentifier="LoginStoryboard" id="BYZ-38-t0r" customClass="Login" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="M4p-2F-idO">
-                                <rect key="frame" x="95.666666666666686" y="49.999999999999986" width="223" height="157.66666666666663"/>
+                                <rect key="frame" x="76" y="50" width="223" height="157.5"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ns2-Jz-JgS">
-                                <rect key="frame" x="126" y="326.66666666666669" width="162" height="34"/>
+                                <rect key="frame" x="126" y="326.5" width="123" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xhu-1h-OCh">
-                                <rect key="frame" x="126" y="370.66666666666669" width="162" height="34"/>
+                                <rect key="frame" x="126" y="370.5" width="123" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-xV-EW4">
-                                <rect key="frame" x="126" y="414.66666666666669" width="162" height="34"/>
+                                <rect key="frame" x="126" y="414.5" width="123" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIz-Dq-wbc">
-                                <rect key="frame" x="185.66666666666666" y="518.66666666666663" width="43" height="36"/>
+                                <rect key="frame" x="166" y="518.5" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFF-79-yHX">
-                                <rect key="frame" x="110" y="208.66666666666666" width="194" height="57.999999999999972"/>
+                                <rect key="frame" x="110" y="208.5" width="155" height="58"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="42"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,8 +63,8 @@
                             <constraint firstItem="M4p-2F-idO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e1d-2p-zko"/>
                             <constraint firstItem="RFF-79-yHX" firstAttribute="top" secondItem="M4p-2F-idO" secondAttribute="bottom" constant="1" id="eVH-s8-tVc"/>
                             <constraint firstItem="Xhu-1h-OCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTD-5N-HCx"/>
-                            <constraint firstItem="RFF-79-yHX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hus-dC-4Is"/>
                             <constraint firstItem="x2v-xV-EW4" firstAttribute="top" secondItem="Xhu-1h-OCh" secondAttribute="bottom" constant="10" id="i3q-8d-CbE"/>
+                            <constraint firstItem="RFF-79-yHX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mlK-9o-5Tb"/>
                             <constraint firstItem="Xhu-1h-OCh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="nZe-6Y-Vkn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RFF-79-yHX" secondAttribute="trailing" constant="110" id="oig-P2-Gc4"/>
                             <constraint firstItem="Xhu-1h-OCh" firstAttribute="top" secondItem="Ns2-Jz-JgS" secondAttribute="bottom" constant="10" id="owJ-3A-fFX"/>
