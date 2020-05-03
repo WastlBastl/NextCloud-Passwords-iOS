@@ -14,6 +14,7 @@
 		BF80135B245DC2F000BC91AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF80135A245DC2F000BC91AB /* Assets.xcassets */; };
 		BF80135E245DC2F000BC91AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF80135C245DC2F000BC91AB /* LaunchScreen.storyboard */; };
 		BF80136C245DD72600BC91AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF80136A245DD72600BC91AB /* Main.storyboard */; };
+		BF911623245ED6DB006094B3 /* NCDatabasePasswords.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF911622245ED6DB006094B3 /* NCDatabasePasswords.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BF80135D245DC2F000BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF80135F245DC2F000BC91AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF80136B245DD72600BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF911622245ED6DB006094B3 /* NCDatabasePasswords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCDatabasePasswords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		BF801350245DC2EE00BC91AB /* Nextcloud Passwords */ = {
 			isa = PBXGroup;
 			children = (
+				BF911621245ED6B2006094B3 /* Database */,
 				BF80136F245DDC4000BC91AB /* Storyboards */,
 				BF801351245DC2EE00BC91AB /* AppDelegate.swift */,
 				BF801353245DC2EE00BC91AB /* SceneDelegate.swift */,
@@ -76,6 +79,14 @@
 				BF80136A245DD72600BC91AB /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BF911621245ED6B2006094B3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BF911622245ED6DB006094B3 /* NCDatabasePasswords.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF911623245ED6DB006094B3 /* NCDatabasePasswords.swift in Sources */,
 				BF801356245DC2EE00BC91AB /* ViewController.swift in Sources */,
 				BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */,
 				BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */,
