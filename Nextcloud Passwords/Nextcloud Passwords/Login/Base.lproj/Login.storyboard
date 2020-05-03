@@ -18,25 +18,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="M4p-2F-idO">
                                 <rect key="frame" x="76" y="50" width="223" height="157.5"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ns2-Jz-JgS">
-                                <rect key="frame" x="126" y="326.5" width="123" height="34"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xhu-1h-OCh">
-                                <rect key="frame" x="126" y="370.5" width="123" height="34"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-xV-EW4">
-                                <rect key="frame" x="126" y="414.5" width="123" height="34"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIz-Dq-wbc">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIz-Dq-wbc">
                                 <rect key="frame" x="166" y="518.5" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save">
@@ -44,34 +26,46 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFF-79-yHX">
-                                <rect key="frame" x="110" y="208.5" width="155" height="58"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="42"/>
+                                <rect key="frame" x="110" y="208.5" width="155" height="42.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="31"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEd-Ga-wlb">
+                                <rect key="frame" x="107.5" y="331" width="160.5" height="122"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ns2-Jz-JgS">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="34"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xhu-1h-OCh">
+                                        <rect key="frame" x="0.0" y="44" width="160.5" height="34"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2v-xV-EW4">
+                                        <rect key="frame" x="0.0" y="88" width="160.5" height="34"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Ns2-Jz-JgS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="0H0-1W-zGU"/>
                             <constraint firstItem="M4p-2F-idO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="94i-td-3nP"/>
-                            <constraint firstItem="Ns2-Jz-JgS" firstAttribute="top" secondItem="RFF-79-yHX" secondAttribute="bottom" constant="60" id="HQy-mN-o09"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xhu-1h-OCh" secondAttribute="trailing" constant="126" id="Rnb-LG-CLa"/>
-                            <constraint firstItem="Ns2-Jz-JgS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TlP-rW-fNW"/>
-                            <constraint firstItem="x2v-xV-EW4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="VDg-f0-1x6"/>
+                            <constraint firstItem="zEd-Ga-wlb" firstAttribute="top" secondItem="RFF-79-yHX" secondAttribute="bottom" constant="80" id="S4C-0X-e6q"/>
                             <constraint firstItem="RFF-79-yHX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="Vkf-id-5zv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x2v-xV-EW4" secondAttribute="trailing" constant="126" id="bEF-Cl-lmh"/>
                             <constraint firstItem="M4p-2F-idO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e1d-2p-zko"/>
                             <constraint firstItem="RFF-79-yHX" firstAttribute="top" secondItem="M4p-2F-idO" secondAttribute="bottom" constant="1" id="eVH-s8-tVc"/>
-                            <constraint firstItem="Xhu-1h-OCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTD-5N-HCx"/>
-                            <constraint firstItem="x2v-xV-EW4" firstAttribute="top" secondItem="Xhu-1h-OCh" secondAttribute="bottom" constant="10" id="i3q-8d-CbE"/>
                             <constraint firstItem="RFF-79-yHX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mlK-9o-5Tb"/>
-                            <constraint firstItem="Xhu-1h-OCh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="nZe-6Y-Vkn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RFF-79-yHX" secondAttribute="trailing" constant="110" id="oig-P2-Gc4"/>
-                            <constraint firstItem="Xhu-1h-OCh" firstAttribute="top" secondItem="Ns2-Jz-JgS" secondAttribute="bottom" constant="10" id="owJ-3A-fFX"/>
                             <constraint firstItem="UIz-Dq-wbc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sUe-mx-l7I"/>
-                            <constraint firstItem="UIz-Dq-wbc" firstAttribute="top" secondItem="x2v-xV-EW4" secondAttribute="bottom" constant="70" id="uj4-wA-bnn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ns2-Jz-JgS" secondAttribute="trailing" constant="126" id="xHP-XO-3hu"/>
-                            <constraint firstItem="x2v-xV-EW4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xe7-1V-sUR"/>
+                            <constraint firstItem="zEd-Ga-wlb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yid-6j-Srp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
