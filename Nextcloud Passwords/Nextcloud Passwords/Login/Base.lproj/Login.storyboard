@@ -19,7 +19,7 @@
                                 <rect key="frame" x="76" y="50" width="223" height="157.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIz-Dq-wbc">
-                                <rect key="frame" x="166" y="521" width="43" height="36"/>
+                                <rect key="frame" x="166" y="510" width="43" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +67,7 @@
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="UIz-Dq-wbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="6rI-OR-fhg"/>
+                            <constraint firstItem="UIz-Dq-wbc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="8Hx-K4-7tB"/>
                             <constraint firstItem="M4p-2F-idO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="94i-td-3nP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UIz-Dq-wbc" secondAttribute="trailing" constant="166" id="KB5-FB-fQn"/>
                             <constraint firstItem="zEd-Ga-wlb" firstAttribute="top" secondItem="RFF-79-yHX" secondAttribute="bottom" constant="80" id="S4C-0X-e6q"/>
