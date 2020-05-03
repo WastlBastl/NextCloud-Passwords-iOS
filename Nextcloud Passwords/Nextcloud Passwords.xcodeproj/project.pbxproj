@@ -60,9 +60,9 @@
 		BF801350245DC2EE00BC91AB /* Nextcloud Passwords */ = {
 			isa = PBXGroup;
 			children = (
+				BFF5B362245F475500E31DF1 /* Launch screen */,
 				BFF5B361245F402400E31DF1 /* Main screen */,
 				BF911621245ED6B2006094B3 /* Database */,
-				BF80136F245DDC4000BC91AB /* Storyboards */,
 				BF801351245DC2EE00BC91AB /* AppDelegate.swift */,
 				BF801353245DC2EE00BC91AB /* SceneDelegate.swift */,
 				BFF5B35E245F3F7500E31DF1 /* Login */,
@@ -70,14 +70,6 @@
 				BF80135F245DC2F000BC91AB /* Info.plist */,
 			);
 			path = "Nextcloud Passwords";
-			sourceTree = "<group>";
-		};
-		BF80136F245DDC4000BC91AB /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				BF80135C245DC2F000BC91AB /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BF911621245ED6B2006094B3 /* Database */ = {
@@ -103,6 +95,14 @@
 				BF801355245DC2EE00BC91AB /* ViewController.swift */,
 			);
 			path = "Main screen";
+			sourceTree = "<group>";
+		};
+		BFF5B362245F475500E31DF1 /* Launch screen */ = {
+			isa = PBXGroup;
+			children = (
+				BF80135C245DC2F000BC91AB /* LaunchScreen.storyboard */,
+			);
+			path = "Launch screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
