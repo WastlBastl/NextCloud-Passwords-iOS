@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="IaX-g7-dHz">
             <objects>
-                <viewController id="TnZ-9h-UGU" sceneMemberID="viewController">
+                <viewController id="TnZ-9h-UGU" customClass="ViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKC-ey-mfv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,11 +23,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2k-2I-PqF">
-                                <rect key="frame" x="188" y="158" width="38" height="30"/>
+                                <rect key="frame" x="165" y="166" width="84" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="3eW-vR-aUp" kind="custom" animates="NO" id="BjB-Wb-Ktr"/>
+                                    <action selector="LoginButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="DvN-ZO-Uhr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,17 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="-170"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="Ues-nW-gMt">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="3eW-vR-aUp" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="s0b-50-Pzl"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Wa-UC-0Db" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="540" y="-170"/>
+            <point key="canvasLocation" x="-4.3478260869565224" y="-170.08928571428569"/>
         </scene>
     </scenes>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
