@@ -15,18 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginScreen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRq-LU-wCq">
-                                <rect key="frame" x="159" y="437.5" width="96" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="LCH-N5-W1j">
+                                <rect key="frame" x="95.5" y="369.5" width="223" height="157.5"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="gRq-LU-wCq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="E8G-uo-aZi"/>
-                            <constraint firstItem="gRq-LU-wCq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xRx-gp-cJu"/>
+                            <constraint firstItem="LCH-N5-W1j" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0Dw-g1-56S"/>
+                            <constraint firstItem="LCH-N5-W1j" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rtk-kI-cXN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -36,4 +33,7 @@
             <point key="canvasLocation" x="55" y="434"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="223" height="157.5"/>
+    </resources>
 </document>
