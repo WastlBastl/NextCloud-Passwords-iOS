@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3325C924608F3700F15976 /* LoginViewController.swift */; };
+		BF3325CD24608F7100F15976 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3325CC24608F7100F15976 /* HomeViewController.swift */; };
 		BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801351245DC2EE00BC91AB /* AppDelegate.swift */; };
 		BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801353245DC2EE00BC91AB /* SceneDelegate.swift */; };
 		BF801356245DC2EE00BC91AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801355245DC2EE00BC91AB /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF3325C924608F3700F15976 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF3325CC24608F7100F15976 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF80134E245DC2EE00BC91AB /* Nextcloud Passwords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nextcloud Passwords.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF801351245DC2EE00BC91AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF801353245DC2EE00BC91AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF3325C824608EB800F15976 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BF3325C924608F3700F15976 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BF3325CB24608F5600F15976 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BF3325CC24608F7100F15976 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BF801345245DC2EE00BC91AB = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +76,8 @@
 		BF801350245DC2EE00BC91AB /* Nextcloud Passwords */ = {
 			isa = PBXGroup;
 			children = (
+				BF3325CB24608F5600F15976 /* Home */,
+				BF3325C824608EB800F15976 /* Login */,
 				BFF5B362245F475500E31DF1 /* Launch screen */,
 				BFF5B361245F402400E31DF1 /* Main screen */,
 				BF911621245ED6B2006094B3 /* Database */,
@@ -162,6 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3325CD24608F7100F15976 /* HomeViewController.swift in Sources */,
+				BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */,
 				BF801356245DC2EE00BC91AB /* ViewController.swift in Sources */,
 				BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */,
 				BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */,
