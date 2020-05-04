@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mainboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQw-VT-6kY">
-                                <rect key="frame" x="166" y="81" width="82" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mainboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQw-VT-6kY">
+                                <rect key="frame" x="146.5" y="81" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,13 +26,16 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LoginButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="DvN-ZO-Uhr"/>
+                                    <segue destination="6Wx-Em-eEi" kind="show" id="SUS-9b-pTo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="j2k-2I-PqF" firstAttribute="leading" secondItem="lcz-XD-ure" secondAttribute="leading" constant="40" id="HxG-gO-wVf"/>
+                            <constraint firstItem="pQw-VT-6kY" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="LHV-kK-U5f"/>
                             <constraint firstItem="lcz-XD-ure" firstAttribute="bottom" secondItem="j2k-2I-PqF" secondAttribute="bottom" constant="40" id="bMT-L7-ybr"/>
+                            <constraint firstItem="pQw-VT-6kY" firstAttribute="top" secondItem="lcz-XD-ure" secondAttribute="top" constant="81" id="f4x-M3-24R"/>
                             <constraint firstItem="lcz-XD-ure" firstAttribute="trailing" secondItem="j2k-2I-PqF" secondAttribute="trailing" constant="40" id="ygh-Xy-D4N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
@@ -51,7 +53,19 @@
                     <view key="view" contentMode="scaleToFill" id="tlL-VF-SBj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeScreen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgZ-2K-dHr">
+                                <rect key="frame" x="137.5" y="323" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="tlL-VF-SBj" secondAttribute="centerY" id="nBF-IR-5dk"/>
+                            <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="tlL-VF-SBj" secondAttribute="centerX" id="ygy-PF-qKP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8B2-iF-x08"/>
                     </view>
                 </viewController>
@@ -128,6 +142,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mUq-4d-cL2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JwN-gp-vPk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2X0-Gu-M93" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
