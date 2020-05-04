@@ -131,6 +131,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amm-J1-KHQ">
                                         <rect key="frame" x="0.0" y="132" width="235" height="30"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="6Wx-Em-eEi" eventType="touchUpInside" id="Td1-hl-iyz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -143,6 +146,12 @@
                         <viewLayoutGuide key="safeArea" id="mUq-4d-cL2"/>
                     </view>
                     <navigationItem key="navigationItem" id="JwN-gp-vPk"/>
+                    <connections>
+                        <outlet property="loginButton" destination="amm-J1-KHQ" id="IIN-7b-plg"/>
+                        <outlet property="loginPasswordTextField" destination="gAZ-Wp-xTB" id="vqH-84-Dh8"/>
+                        <outlet property="loginURLTextField" destination="DDJ-BD-MrR" id="A5R-rp-DJd"/>
+                        <outlet property="loginUsernameTextField" destination="s9H-2W-EeW" id="6K7-QJ-GQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2X0-Gu-M93" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
