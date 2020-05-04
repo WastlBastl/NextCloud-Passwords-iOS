@@ -25,8 +25,7 @@
                                 <rect key="frame" x="40" y="597" width="295" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="LoginButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="DvN-ZO-Uhr"/>
-                                    <segue destination="6Wx-Em-eEi" kind="show" id="SUS-9b-pTo"/>
+                                    <segue destination="6Wx-Em-eEi" kind="show" id="DyA-pP-6AZ"/>
                                 </connections>
                             </button>
                         </subviews>
