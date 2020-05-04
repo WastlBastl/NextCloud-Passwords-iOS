@@ -41,6 +41,9 @@
                         <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZgY-vx-aOb"/>
+                    <connections>
+                        <outlet property="mainLoginButton" destination="j2k-2I-PqF" id="P0k-Xa-Caa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

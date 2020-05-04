@@ -10,10 +10,16 @@ import UIKit
 
 class Main: UIViewController {
 
+    
+    @IBOutlet weak var mainLoginButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
     
 }
 
