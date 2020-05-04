@@ -46,6 +46,9 @@ class LoginViewController: UIViewController {
         
         print(NCUrl, NCUsername, NCPassword)
         
+        
+// Tastatur lässt sich nicht minimieren im Login Screen am iPhone!! Dies muss geändert werden.
+        
     }
     
     
