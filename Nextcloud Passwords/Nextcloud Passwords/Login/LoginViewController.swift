@@ -34,11 +34,17 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
     
     @IBAction func loginTapped(_ sender: Any) {
         
+//       Get URL from loginURLTextField
+        var NCUrl: String = loginURLTextField.text!
+//        Get Username from loginUsernameTextField
+        var NCUsername: String = loginUsernameTextField.text!
+//      Get Password from loginUsernamePasswordField
+        var NCPassword: String = loginPasswordTextField.text!
         
+        print(NCUrl, NCUsername, NCPassword)
         
     }
     
