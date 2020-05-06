@@ -15,14 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    struct GlobalVariables {
-        static let loginUsernameDefaults = UserDefaults.standard
-        static let loginPasswordDefaults = UserDefaults.standard
-        static let loginURLDefaults = UserDefaults.standard
-    }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,10 +31,11 @@ class LoginViewController: UIViewController {
 //        var NCUsername: String = loginUsernameTextField.text!
 //      Get Password from loginUsernamePasswordField
 //        var NCPassword: String = loginPasswordTextField.text!
+    
         
-        LoginViewController.GlobalVariables.loginUsernameDefaults.set(loginUsernameTextField.text, forKey: "DefaultsUsername")
-        LoginViewController.GlobalVariables.loginPasswordDefaults.set(loginPasswordTextField.text, forKey: "DefaultsPassword")
-        LoginViewController.GlobalVariables.loginURLDefaults.set(loginURLTextField.text, forKey: "DefaultsURL")
+        Main.GlobalVariables.loginDefaults.set(loginUsernameTextField.text, forKey: "DefaultsUsername")
+        Main.GlobalVariables.loginDefaults.set(loginPasswordTextField.text, forKey: "DefaultsPassword")
+        Main.GlobalVariables.loginDefaults.set(loginURLTextField.text, forKey: "DefaultsURL")
         
 //        print(NCUrl, NCUsername, NCPassword)
         

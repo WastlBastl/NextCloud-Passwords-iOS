@@ -10,54 +10,13 @@
         <!--Main-->
         <scene sceneID="IaX-g7-dHz">
             <objects>
-                <viewController id="TnZ-9h-UGU" customClass="Main" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="TnZ-9h-UGU" customClass="Main" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKC-ey-mfv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mainboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQw-VT-6kY">
-                                <rect key="frame" x="146.5" y="81" width="82" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2k-2I-PqF">
-                                <rect key="frame" x="40" y="597" width="295" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="6Wx-Em-eEi" kind="show" id="DyA-pP-6AZ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="j2k-2I-PqF" firstAttribute="leading" secondItem="lcz-XD-ure" secondAttribute="leading" constant="40" id="HxG-gO-wVf"/>
-                            <constraint firstItem="pQw-VT-6kY" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="LHV-kK-U5f"/>
-                            <constraint firstItem="lcz-XD-ure" firstAttribute="bottom" secondItem="j2k-2I-PqF" secondAttribute="bottom" constant="40" id="bMT-L7-ybr"/>
-                            <constraint firstItem="pQw-VT-6kY" firstAttribute="top" secondItem="lcz-XD-ure" secondAttribute="top" constant="81" id="f4x-M3-24R"/>
-                            <constraint firstItem="lcz-XD-ure" firstAttribute="trailing" secondItem="j2k-2I-PqF" secondAttribute="trailing" constant="40" id="ygh-Xy-D4N"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZgY-vx-aOb"/>
-                    <connections>
-                        <outlet property="mainLoginButton" destination="j2k-2I-PqF" id="P0k-Xa-Caa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="802.39999999999998" y="-170.46476761619192"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="zkw-nO-Igt">
-            <objects>
-                <viewController id="uzi-1a-G07" customClass="HomeViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tlL-VF-SBj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeScreen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgZ-2K-dHr">
-                                <rect key="frame" x="138" y="323.5" width="99.5" height="20.5"/>
+                                <rect key="frame" x="138" y="354" width="99.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,20 +48,42 @@
                                 <rect key="frame" x="151.5" y="197.5" width="72" height="30"/>
                                 <state key="normal" title="Press me!!"/>
                                 <connections>
+                                    <action selector="pressmeanother:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="Lb7-qD-zu0"/>
                                     <action selector="pressmebutton:" destination="uzi-1a-G07" eventType="touchUpInside" id="1Po-If-uEP"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="8B2-iF-x08" firstAttribute="trailing" secondItem="VTd-RN-ntp" secondAttribute="trailing" constant="100" id="IGU-1j-Hcg"/>
-                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="top" secondItem="VTd-RN-ntp" secondAttribute="bottom" constant="30" id="VPA-BQ-TSU"/>
-                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="centerX" secondItem="tlL-VF-SBj" secondAttribute="centerX" id="byP-q6-AqD"/>
-                            <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="tlL-VF-SBj" secondAttribute="centerY" id="nBF-IR-5dk"/>
-                            <constraint firstItem="VTd-RN-ntp" firstAttribute="top" secondItem="8B2-iF-x08" secondAttribute="top" constant="50" id="rxL-c5-O1x"/>
-                            <constraint firstItem="VTd-RN-ntp" firstAttribute="leading" secondItem="8B2-iF-x08" secondAttribute="leading" constant="100" id="vCi-Nw-0OJ"/>
-                            <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="tlL-VF-SBj" secondAttribute="centerX" id="ygy-PF-qKP"/>
+                            <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="qKC-ey-mfv" secondAttribute="centerY" constant="30.75" id="8Oa-1n-thA"/>
+                            <constraint firstItem="lcz-XD-ure" firstAttribute="trailing" secondItem="VTd-RN-ntp" secondAttribute="trailing" constant="100" id="HEu-rX-Ned"/>
+                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="top" secondItem="VTd-RN-ntp" secondAttribute="bottom" constant="30" id="MQV-4b-J1q"/>
+                            <constraint firstItem="VTd-RN-ntp" firstAttribute="leading" secondItem="lcz-XD-ure" secondAttribute="leading" constant="100" id="Rac-mh-Qj7"/>
+                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="ftG-rh-VmR"/>
+                            <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="xCs-ye-Wvn"/>
+                            <constraint firstItem="VTd-RN-ntp" firstAttribute="top" secondItem="lcz-XD-ure" secondAttribute="top" constant="50" id="yJg-Lf-UzE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZgY-vx-aOb"/>
+                    <connections>
+                        <outlet property="Password" destination="xGv-OI-z8J" id="gJb-Tu-gfI"/>
+                        <outlet property="URL" destination="WP0-fD-QmL" id="oPh-iV-mXO"/>
+                        <outlet property="Username" destination="AdU-qN-kQ7" id="VKQ-j0-HaL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="91"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="zkw-nO-Igt">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="uzi-1a-G07" customClass="HomeViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tlL-VF-SBj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8B2-iF-x08"/>
                     </view>
                     <navigationItem key="navigationItem" id="fZ4-ta-YrB"/>
@@ -114,12 +95,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfu-pV-cS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="40"/>
+            <point key="canvasLocation" x="1566" y="90"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hoA-wC-EVp">
             <objects>
-                <viewController id="6Wx-Em-eEi" customClass="LoginViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="6Wx-Em-eEi" customClass="LoginViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uif-gq-Wmm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +157,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginTapped:" destination="6Wx-Em-eEi" eventType="touchUpInside" id="Td1-hl-iyz"/>
-                                            <segue destination="uzi-1a-G07" kind="show" id="pME-TA-8Aa"/>
+                                            <segue destination="TnZ-9h-UGU" kind="show" id="yO8-4B-Eeg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -199,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2X0-Gu-M93" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="-355"/>
+            <point key="canvasLocation" x="806" y="-627"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WZT-1e-Fat">
@@ -211,12 +192,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="TnZ-9h-UGU" kind="relationship" relationship="rootViewController" id="uQl-Ql-tDF"/>
+                        <segue destination="6Wx-Em-eEi" kind="relationship" relationship="rootViewController" id="J5s-gn-0rT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uw-9y-KT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-136.80000000000001" y="-170.46476761619192"/>
+            <point key="canvasLocation" x="-114" y="90"/>
         </scene>
     </scenes>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>

@@ -24,9 +24,9 @@ class HomeViewController: UIViewController {
 
     @IBAction func pressmebutton(_ sender: Any) {
         
-        let Username_Print = LoginViewController.GlobalVariables.loginUsernameDefaults.string(forKey: "DefaultsUsername")
-        let Password_Print = LoginViewController.GlobalVariables.loginPasswordDefaults.string(forKey: "DefaultsPassword")
-        let URL_Print = LoginViewController.GlobalVariables.loginURLDefaults.string(forKey: "DefaultsURL")
+        let Username_Print = Main.GlobalVariables.loginDefaults.string(forKey: "DefaultsUsername")
+        let Password_Print = Main.GlobalVariables.loginDefaults.string(forKey: "DefaultsPassword")
+        let URL_Print = Main.GlobalVariables.loginDefaults.string(forKey: "DefaultsURL")
         
         Usernmae.text = Username_Print
         Password.text = Password_Print
