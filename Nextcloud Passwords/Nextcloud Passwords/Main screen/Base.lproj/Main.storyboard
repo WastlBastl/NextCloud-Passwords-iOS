@@ -49,7 +49,6 @@
                                 <state key="normal" title="Press me!!"/>
                                 <connections>
                                     <action selector="pressmeanother:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="Lb7-qD-zu0"/>
-                                    <action selector="pressmebutton:" destination="uzi-1a-G07" eventType="touchUpInside" id="1Po-If-uEP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,27 +74,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="806" y="91"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="zkw-nO-Igt">
-            <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="uzi-1a-G07" customClass="HomeViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tlL-VF-SBj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="8B2-iF-x08"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fZ4-ta-YrB"/>
-                    <connections>
-                        <outlet property="Password" destination="xGv-OI-z8J" id="UMv-qB-qPh"/>
-                        <outlet property="URL" destination="WP0-fD-QmL" id="cnt-un-Ldo"/>
-                        <outlet property="Usernmae" destination="AdU-qN-kQ7" id="Iic-F8-BMl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yfu-pV-cS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1566" y="90"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hoA-wC-EVp">
