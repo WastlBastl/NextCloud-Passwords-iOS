@@ -57,19 +57,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeScreen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgZ-2K-dHr">
-                                <rect key="frame" x="137.5" y="323" width="100" height="21"/>
+                                <rect key="frame" x="138" y="323.5" width="99.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-RN-ntp">
+                                <rect key="frame" x="100" y="50" width="175" height="117.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WP0-fD-QmL">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-qN-kQ7">
+                                        <rect key="frame" x="0.0" y="48.5" width="175" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGv-OI-z8J">
+                                        <rect key="frame" x="0.0" y="97" width="175" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA2-Yj-8hC">
+                                <rect key="frame" x="151.5" y="197.5" width="72" height="30"/>
+                                <state key="normal" title="Press me!!"/>
+                                <connections>
+                                    <action selector="pressmebutton:" destination="uzi-1a-G07" eventType="touchUpInside" id="1Po-If-uEP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="8B2-iF-x08" firstAttribute="trailing" secondItem="VTd-RN-ntp" secondAttribute="trailing" constant="100" id="IGU-1j-Hcg"/>
+                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="top" secondItem="VTd-RN-ntp" secondAttribute="bottom" constant="30" id="VPA-BQ-TSU"/>
+                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="centerX" secondItem="tlL-VF-SBj" secondAttribute="centerX" id="byP-q6-AqD"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="tlL-VF-SBj" secondAttribute="centerY" id="nBF-IR-5dk"/>
+                            <constraint firstItem="VTd-RN-ntp" firstAttribute="top" secondItem="8B2-iF-x08" secondAttribute="top" constant="50" id="rxL-c5-O1x"/>
+                            <constraint firstItem="VTd-RN-ntp" firstAttribute="leading" secondItem="8B2-iF-x08" secondAttribute="leading" constant="100" id="vCi-Nw-0OJ"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="tlL-VF-SBj" secondAttribute="centerX" id="ygy-PF-qKP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8B2-iF-x08"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fZ4-ta-YrB"/>
+                    <connections>
+                        <outlet property="Password" destination="xGv-OI-z8J" id="UMv-qB-qPh"/>
+                        <outlet property="URL" destination="WP0-fD-QmL" id="cnt-un-Ldo"/>
+                        <outlet property="Usernmae" destination="AdU-qN-kQ7" id="Iic-F8-BMl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfu-pV-cS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,6 +176,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginTapped:" destination="6Wx-Em-eEi" eventType="touchUpInside" id="Td1-hl-iyz"/>
+                                            <segue destination="uzi-1a-G07" kind="show" id="pME-TA-8Aa"/>
                                         </connections>
                                     </button>
                                 </subviews>

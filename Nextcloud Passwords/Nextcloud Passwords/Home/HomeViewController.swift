@@ -10,6 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var Password: UILabel!
+    @IBOutlet weak var Usernmae: UILabel!
+    @IBOutlet weak var URL: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +22,17 @@ class HomeViewController: UIViewController {
     }
     
 
+    @IBAction func pressmebutton(_ sender: Any) {
+        
+        let Username_Print = LoginViewController.GlobalVariables.loginUsernameDefaults.string(forKey: "DefaultsUsername")
+        let Password_Print = LoginViewController.GlobalVariables.loginPasswordDefaults.string(forKey: "DefaultsPassword")
+        let URL_Print = LoginViewController.GlobalVariables.loginURLDefaults.string(forKey: "DefaultsURL")
+        
+        Usernmae.text = Username_Print
+        Password.text = Password_Print
+        URL.text = URL_Print
+        
+    }
     /*
     // MARK: - Navigation
 
