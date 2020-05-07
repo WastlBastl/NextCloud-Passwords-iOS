@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
         self.window = UIWindow(windowScene: windowScene)
         //self.window =  UIWindow(frame: UIScreen.main.bounds)
-        if Main.GlobalVariables.loginDefaults != nil {
+        if let Login = Main.GlobalVariables.loginDefaults.string(forKey: "DefaultsUsername")  {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let rootVC = storyboard.instantiateViewController(identifier: "MainView") as? UIViewController else {
                 print("ViewController not found")
