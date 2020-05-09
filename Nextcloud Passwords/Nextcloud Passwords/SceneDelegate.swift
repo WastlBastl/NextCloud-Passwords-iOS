@@ -21,31 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //    }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
-        self.window = UIWindow(windowScene: windowScene)
-        //self.window =  UIWindow(frame: UIScreen.main.bounds)
-        if let Login = Main.GlobalVariables.loginDefaults.string(forKey: "DefaultsUsername")  {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let rootVC = storyboard.instantiateViewController(identifier: "MainView") as? UIViewController else {
-                print("ViewController not found")
-                return
-            }
-            let rootNC = UINavigationController(rootViewController: rootVC)
-            self.window?.rootViewController = rootNC
-            self.window?.makeKeyAndVisible()
-        }
-        else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let rootVC = storyboard.instantiateViewController(identifier: "LoginViewController") as? UIViewController else {
-                print("ViewController not found")
-                return
-            }
-            let rootNC = UINavigationController(rootViewController: rootVC)
-            self.window?.rootViewController = rootNC
-            self.window?.makeKeyAndVisible()
-            
-            
-        }
 
     }
 

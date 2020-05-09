@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59BFAAB9C004EF4D8A3B23AC /* Pods_Nextcloud_Passwords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93C290146BC91193976EBDE /* Pods_Nextcloud_Passwords.framework */; };
 		BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3325C924608F3700F15976 /* LoginViewController.swift */; };
 		BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801351245DC2EE00BC91AB /* AppDelegate.swift */; };
 		BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801353245DC2EE00BC91AB /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72E04A2B341F43D89C28738E /* Pods-Nextcloud Passwords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nextcloud Passwords.debug.xcconfig"; path = "Target Support Files/Pods-Nextcloud Passwords/Pods-Nextcloud Passwords.debug.xcconfig"; sourceTree = "<group>"; };
 		BF3325C924608F3700F15976 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF80134E245DC2EE00BC91AB /* Nextcloud Passwords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nextcloud Passwords.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF801351245DC2EE00BC91AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		BF80135D245DC2F000BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF80135F245DC2F000BC91AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF80136B245DD72600BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C93C290146BC91193976EBDE /* Pods_Nextcloud_Passwords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nextcloud_Passwords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2066F17EF75487E2324D3E /* Pods-Nextcloud Passwords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nextcloud Passwords.release.xcconfig"; path = "Target Support Files/Pods-Nextcloud Passwords/Pods-Nextcloud Passwords.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59BFAAB9C004EF4D8A3B23AC /* Pods_Nextcloud_Passwords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				BF801350245DC2EE00BC91AB /* Nextcloud Passwords */,
 				BF80134F245DC2EE00BC91AB /* Products */,
+				D813F0387B2451CB0CEB423D /* Pods */,
+				D2F90B96F11D80447E27D278 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +109,24 @@
 			path = "Launch screen";
 			sourceTree = "<group>";
 		};
+		D2F90B96F11D80447E27D278 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C93C290146BC91193976EBDE /* Pods_Nextcloud_Passwords.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D813F0387B2451CB0CEB423D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72E04A2B341F43D89C28738E /* Pods-Nextcloud Passwords.debug.xcconfig */,
+				DC2066F17EF75487E2324D3E /* Pods-Nextcloud Passwords.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF801362245DC2F000BC91AB /* Build configuration list for PBXNativeTarget "Nextcloud Passwords" */;
 			buildPhases = (
+				9BA1C0EA3F9188CEE1D8D287 /* [CP] Check Pods Manifest.lock */,
 				BF80134A245DC2EE00BC91AB /* Sources */,
 				BF80134B245DC2EE00BC91AB /* Frameworks */,
 				BF80134C245DC2EE00BC91AB /* Resources */,
+				F8B822BBCE585EA69C2FD467 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +194,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9BA1C0EA3F9188CEE1D8D287 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nextcloud Passwords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8B822BBCE585EA69C2FD467 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nextcloud Passwords/Pods-Nextcloud Passwords-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nextcloud Passwords/Pods-Nextcloud Passwords-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nextcloud Passwords/Pods-Nextcloud Passwords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF80134A245DC2EE00BC91AB /* Sources */ = {
@@ -318,6 +387,7 @@
 		};
 		BF801363245DC2F000BC91AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72E04A2B341F43D89C28738E /* Pods-Nextcloud Passwords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -337,6 +407,7 @@
 		};
 		BF801364245DC2F000BC91AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC2066F17EF75487E2324D3E /* Pods-Nextcloud Passwords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

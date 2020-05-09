@@ -21,55 +21,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-RN-ntp">
-                                <rect key="frame" x="100" y="50" width="175" height="117.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WP0-fD-QmL">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-qN-kQ7">
-                                        <rect key="frame" x="0.0" y="48.5" width="175" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGv-OI-z8J">
-                                        <rect key="frame" x="0.0" y="97" width="175" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA2-Yj-8hC">
-                                <rect key="frame" x="151.5" y="197.5" width="72" height="30"/>
-                                <state key="normal" title="Press me!!"/>
-                                <connections>
-                                    <action selector="pressmeanother:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="Lb7-qD-zu0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="qKC-ey-mfv" secondAttribute="centerY" constant="30.75" id="8Oa-1n-thA"/>
-                            <constraint firstItem="lcz-XD-ure" firstAttribute="trailing" secondItem="VTd-RN-ntp" secondAttribute="trailing" constant="100" id="HEu-rX-Ned"/>
-                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="top" secondItem="VTd-RN-ntp" secondAttribute="bottom" constant="30" id="MQV-4b-J1q"/>
-                            <constraint firstItem="VTd-RN-ntp" firstAttribute="leading" secondItem="lcz-XD-ure" secondAttribute="leading" constant="100" id="Rac-mh-Qj7"/>
-                            <constraint firstItem="DA2-Yj-8hC" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="ftG-rh-VmR"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="xCs-ye-Wvn"/>
-                            <constraint firstItem="VTd-RN-ntp" firstAttribute="top" secondItem="lcz-XD-ure" secondAttribute="top" constant="50" id="yJg-Lf-UzE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZgY-vx-aOb"/>
-                    <connections>
-                        <outlet property="Password" destination="xGv-OI-z8J" id="gJb-Tu-gfI"/>
-                        <outlet property="URL" destination="WP0-fD-QmL" id="oPh-iV-mXO"/>
-                        <outlet property="Username" destination="AdU-qN-kQ7" id="VKQ-j0-HaL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
