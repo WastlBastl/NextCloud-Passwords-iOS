@@ -12,7 +12,7 @@ class Main: UIViewController {
 
 //    Example for Global Varibales
     struct GlobalVariables {
-        static let APIURL = "/api/1.0"
+        static let APIURL = "/index.php/apps/passwords/api/1.0"
     }
 
     override func viewDidLoad() {

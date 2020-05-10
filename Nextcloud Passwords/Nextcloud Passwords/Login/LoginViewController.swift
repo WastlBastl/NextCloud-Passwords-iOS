@@ -27,7 +27,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let SessionAPIURL = URL(string: KeyChainURL! + Main.GlobalVariables.APIURL + "/session/request")
+        
+//      Build API Call
+        let SessionAPIURL = URL(string: KeyChainURL! + Main.GlobalVariables.APIURL + "/password/list")
         print(SessionAPIURL as Any)
         
 //      Build Basic Authorization
@@ -70,24 +72,26 @@ class LoginViewController: UIViewController {
 //        Create the data task
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             
-//            Check for errors
             if error == nil && data != nil {
-//                Try to parse out the data
+                
+//                Parse JSON
+                let decoder = JSONDecoder()
+                
                 do{
-                    let dictionary = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
-                    print(dictionary)
-                }
+                    let NCPasswordsGET = try decoder.decode(NCPasswords.self, from: data!)
+                    print(NCPasswordsGET)
+                    }
                 catch{
-                    print("Error parsing response data")
+                    print("Error in JSON parsing")
                 }
+                
             }
         }
-//
-            
+        
 //            Fire up dataTask
             dataTask.resume()
         
-        
+// End of API Call
         
         
         
