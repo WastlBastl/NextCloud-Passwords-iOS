@@ -17,79 +17,56 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-//    Declare
-    let KeyChainURL = KeychainWrapper.standard.string(forKey: "LoginURL")
-    let KeyChainUsername = KeychainWrapper.standard.string(forKey: "LoginUsername")
-    let KeyChainPassword = KeychainWrapper.standard.string(forKey: "LoginPassword")
     
+    
+//  Declare Variables
+    let KeyChainURL = KeychainWrapper.standard.string(forKey: "LoginURL")!
+    let KeyChainUsername = KeychainWrapper.standard.string(forKey: "LoginUsername")!
+    let KeyChainPassword = KeychainWrapper.standard.string(forKey: "LoginPassword")!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
 //      Build API Call
-        let SessionAPIURL = URL(string: KeyChainURL! + Main.GlobalVariables.APIURL + "/password/list")
+        let SessionAPIURL = URL(string: KeyChainURL + Main.GlobalVariables.APIURL + "/session/request")
         print(SessionAPIURL as Any)
         
-//      Build Basic Authorization
-        let loginString = String(format: "%@:%@", KeyChainUsername!, KeyChainPassword!)
-        let loginData = loginString.data(using: String.Encoding.utf8)!
-        let base64LoginString = loginData.base64EncodedString()
-        
 //      URL Request
+//        var request = URLRequest(url: SessionAPIURL!)
+        
+        // credentials encoded in base64
+        let username = KeyChainUsername
+        let password = KeyChainPassword
+        let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
+        let base64LoginData = loginData.base64EncodedString()
+         
+            // create the request
+//            let url = URL(url: SessionAPIURL)!
         var request = URLRequest(url: SessionAPIURL!)
-        
-//      Speicify Headers
-        let headers = [
-            "Authorization": base64LoginString,
-            "content-type": "application/json"
-        ]
-        
-        request.allHTTPHeaderFields = headers
-        
-//      Specify the body
-//        let jsonObject = [
-//            "URL": "https://test.test",
-//            "Test": true
-//        ] as [String:Any] -> for matching, because there is an boolean in there
-        
-//      Make it as an Data Object
-//        do{
-//        let requestBody = try JSONSerialization.data(withJSONObject: jsonObject, options: .fragmentsAllowed)
-//        request.httpBody = requestBody
-//        }
-//        catch {
-//            print("Error creating the data object from json")
-//        }
-        
-//        Set HTTP Request Type
         request.httpMethod = "GET"
-        
-//        Get the URLSession
-        let session = URLSession.shared
-        
-//        Create the data task
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            
-            if error == nil && data != nil {
+        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+         
+            //making the request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("\(error)")
+                return
+            }
+         
+            if let httpStatus = response as? HTTPURLResponse {
+                // check status code returned by the http server
+                print("status code = \(httpStatus.statusCode)")
                 
-//                Parse JSON
-                let decoder = JSONDecoder()
-                
-                do{
-                    let NCPasswordsGET = try decoder.decode(NCPasswords.self, from: data!)
-                    print(NCPasswordsGET)
-                    }
-                catch{
-                    print("Error in JSON parsing")
+//              Debug!!
+                if httpStatus.statusCode != 200 {
+                    print("Username, Password or URL are false or the URL is not reachable!")
                 }
-                
+            // process result
             }
         }
+            task.resume()
         
-//            Fire up dataTask
-            dataTask.resume()
         
 // End of API Call
         
