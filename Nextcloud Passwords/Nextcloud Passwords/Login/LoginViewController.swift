@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     
-    
 //  Declare Variables
     let KeyChainURL = KeychainWrapper.standard.string(forKey: "LoginURL")!
     let KeyChainUsername = KeychainWrapper.standard.string(forKey: "LoginUsername")!
@@ -27,6 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 //      Build API Call
         let SessionAPIURL = URL(string: KeyChainURL + Main.GlobalVariables.APIURL + "/session/request")
