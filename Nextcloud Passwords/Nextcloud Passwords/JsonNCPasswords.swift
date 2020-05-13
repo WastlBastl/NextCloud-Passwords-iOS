@@ -22,7 +22,8 @@ struct NCPasswords: Codable {
     var hash:String?
     var folder:String?
     var revision:String?
-    var share:String?
+//    var share:String? // -> can be nil!!!
+    var shared:Bool?
     var cseType:String?
     var cseKey:String?
     var sseType:String?

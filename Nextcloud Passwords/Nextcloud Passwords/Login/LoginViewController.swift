@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginUsernameTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var ErrorLabel: UILabel!
     
     
 //  Declare Variables
@@ -26,53 +27,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//      Build API Call
-        let SessionAPIURL = URL(string: KeyChainURL + Main.GlobalVariables.APIURL + "/session/request")
-        print(SessionAPIURL as Any)
-        
-//      URL Request
-//        var request = URLRequest(url: SessionAPIURL!)
-        
-        // credentials encoded in base64
-        let username = KeyChainUsername
-        let password = KeyChainPassword
-        let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
-        let base64LoginData = loginData.base64EncodedString()
-         
-            // create the request
-//            let url = URL(url: SessionAPIURL)!
-        var request = URLRequest(url: SessionAPIURL!)
-        request.httpMethod = "GET"
-        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-         
-            //making the request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("\(error)")
-                return
-            }
-         
-            if let httpStatus = response as? HTTPURLResponse {
-                // check status code returned by the http server
-                print("status code = \(httpStatus.statusCode)")
-                
-//              Debug!!
-                if httpStatus.statusCode != 200 {
-                    print("Username, Password or URL are false or the URL is not reachable!")
-                }
-            // process result
-            }
-        }
-            task.resume()
-        
-        
-// End of API Call
-        
-        
-        
-        
         
         
 //      Proof if User has logged in before
@@ -102,10 +56,57 @@ class LoginViewController: UIViewController {
 
     
     @IBAction func loginTapped(_ sender: Any) {
+        
         KeychainWrapper.standard.set(loginURLTextField.text ?? "", forKey: "LoginURL")
         KeychainWrapper.standard.set(loginUsernameTextField.text ?? "", forKey: "LoginUsername")
         KeychainWrapper.standard.set(loginPasswordTextField.text ?? "", forKey: "LoginPassword")
-// Tastatur lässt sich nicht minimieren im Login Screen am iPhone!! Dies muss geändert werden.
+
+        //      Build API Call
+                let SessionAPIURL = URL(string: KeyChainURL + Main.GlobalVariables.APIURL + "/session/request")
+                print(SessionAPIURL as Any)
+                
+        //      URL Request
+        //        var request = URLRequest(url: SessionAPIURL!)
+                
+                // credentials encoded in base64
+                let username = KeyChainUsername
+                let password = KeyChainPassword
+                let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
+                let base64LoginData = loginData.base64EncodedString()
+                 
+                    // create the request
+        //            let url = URL(url: SessionAPIURL)!
+                var request = URLRequest(url: SessionAPIURL!)
+                request.httpMethod = "GET"
+                request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+                 
+                    //making the request
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data, error == nil else {
+                        print("\(error)")
+                        return
+                    }
+                 
+                    if let httpStatus = response as? HTTPURLResponse {
+                        // check status code returned by the http server
+                        print("Login status code = \(httpStatus.statusCode)")
+                        
+        //              Debug!!
+                        if httpStatus.statusCode != 200 {
+                            self.ErrorLabel.text = "Username, Password or URL are false or the URL is not reachable!"
+                        }
+                        else{
+                            
+//                          open HomeScreen ViewController
+                            
+                        }
+                    // process result
+                    }
+                }
+                    task.resume()
+                
+                
+        // End of API Call
         
     }
     
