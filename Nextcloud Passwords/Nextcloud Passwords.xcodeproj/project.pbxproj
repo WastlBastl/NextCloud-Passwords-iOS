@@ -12,7 +12,7 @@
 		BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3325C924608F3700F15976 /* LoginViewController.swift */; };
 		BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801351245DC2EE00BC91AB /* AppDelegate.swift */; };
 		BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801353245DC2EE00BC91AB /* SceneDelegate.swift */; };
-		BF801356245DC2EE00BC91AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801355245DC2EE00BC91AB /* ViewController.swift */; };
+		BF801356245DC2EE00BC91AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801355245DC2EE00BC91AB /* MainViewController.swift */; };
 		BF80135B245DC2F000BC91AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF80135A245DC2F000BC91AB /* Assets.xcassets */; };
 		BF80135E245DC2F000BC91AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF80135C245DC2F000BC91AB /* LaunchScreen.storyboard */; };
 		BF80136C245DD72600BC91AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF80136A245DD72600BC91AB /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 		BF80134E245DC2EE00BC91AB /* Nextcloud Passwords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nextcloud Passwords.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF801351245DC2EE00BC91AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF801353245DC2EE00BC91AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF801355245DC2EE00BC91AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF801355245DC2EE00BC91AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF80135A245DC2F000BC91AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF80135D245DC2F000BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF80135F245DC2F000BC91AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BF80136A245DD72600BC91AB /* Main.storyboard */,
-				BF801355245DC2EE00BC91AB /* ViewController.swift */,
+				BF801355245DC2EE00BC91AB /* MainViewController.swift */,
 			);
 			path = "Main screen";
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			files = (
 				BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */,
 				BF2742F0246809B0005D5B1C /* JsonNCPasswords.swift in Sources */,
-				BF801356245DC2EE00BC91AB /* ViewController.swift in Sources */,
+				BF801356245DC2EE00BC91AB /* MainViewController.swift in Sources */,
 				BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */,
 				BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */,
 			);

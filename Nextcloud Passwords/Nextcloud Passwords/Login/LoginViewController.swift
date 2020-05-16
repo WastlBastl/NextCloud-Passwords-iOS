@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
 
     
     @IBAction func loginTapped(_ sender: Any) {
-        
+        self.ErrorLabel.text = ""
         KeychainWrapper.standard.set(loginURLTextField.text ?? "", forKey: "LoginURL")
         KeychainWrapper.standard.set(loginUsernameTextField.text ?? "", forKey: "LoginUsername")
         KeychainWrapper.standard.set(loginPasswordTextField.text ?? "", forKey: "LoginPassword")
@@ -71,11 +71,15 @@ class LoginViewController: UIViewController {
         AF.request(KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/session/request", headers: headers).response { response in
 //            debugPrint(response)
             let statusCode = response.response?.statusCode
-            print(statusCode as Int?)
+            print(statusCode as Any)
+            
+            if statusCode != 200 {
+                self.ErrorLabel.text = "Can not sign in"
+            }
+            
         }
-                
-                
         // End of API Call
+        
         
     }
     
