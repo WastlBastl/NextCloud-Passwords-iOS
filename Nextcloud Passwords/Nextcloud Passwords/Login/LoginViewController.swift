@@ -9,6 +9,8 @@
 import UIKit
 import LocalAuthentication
 import SwiftKeychainWrapper
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
@@ -27,12 +29,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
 //      Proof if User has logged in before
         
         if KeyChainURL != nil && KeyChainUsername != nil && KeyChainPassword != nil{
-            print("Keychain is full")
+//            print("Keychain is full")
             let context:LAContext = LAContext()
                 
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil){
@@ -47,7 +48,7 @@ class LoginViewController: UIViewController {
             }
         }
         else{
-            print("KeyChain is emtpy")
+//            print("KeyChain is emtpy")
         }
     }
         
@@ -62,48 +63,16 @@ class LoginViewController: UIViewController {
         KeychainWrapper.standard.set(loginPasswordTextField.text ?? "", forKey: "LoginPassword")
 
         //      Build API Call
-                let SessionAPIURL = URL(string: KeyChainURL + Main.GlobalVariables.APIURL + "/session/request")
-                print(SessionAPIURL as Any)
-                
-        //      URL Request
-        //        var request = URLRequest(url: SessionAPIURL!)
-                
-                // credentials encoded in base64
-                let username = KeyChainUsername
-                let password = KeyChainPassword
-                let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
-                let base64LoginData = loginData.base64EncodedString()
-                 
-                    // create the request
-        //            let url = URL(url: SessionAPIURL)!
-                var request = URLRequest(url: SessionAPIURL!)
-                request.httpMethod = "GET"
-                request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-                 
-                    //making the request
-                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard let data = data, error == nil else {
-                        print("\(error)")
-                        return
-                    }
-                 
-                    if let httpStatus = response as? HTTPURLResponse {
-                        // check status code returned by the http server
-                        print("Login status code = \(httpStatus.statusCode)")
-                        
-        //              Debug!!
-                        if httpStatus.statusCode != 200 {
-                            self.ErrorLabel.text = "Username, Password or URL are false or the URL is not reachable!"
-                        }
-                        else{
-                            
-//                          open HomeScreen ViewController
-                            
-                        }
-                    // process result
-                    }
-                }
-                    task.resume()
+        let headers: HTTPHeaders = [
+            .authorization(username: KeychainWrapper.standard.string(forKey: "LoginUsername")!, password: KeychainWrapper.standard.string(forKey: "LoginPassword")!),
+            .accept("application/json")
+        ]
+        
+        AF.request(KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/session/request", headers: headers).response { response in
+//            debugPrint(response)
+            let statusCode = response.response?.statusCode
+            print(statusCode as Int?)
+        }
                 
                 
         // End of API Call

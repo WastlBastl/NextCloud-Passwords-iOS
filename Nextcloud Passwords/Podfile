@@ -7,5 +7,7 @@ target 'Nextcloud Passwords' do
 
   # Pods for Nextcloud Passwords
   pod 'SwiftKeychainWrapper'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Alamofire'
 
 end

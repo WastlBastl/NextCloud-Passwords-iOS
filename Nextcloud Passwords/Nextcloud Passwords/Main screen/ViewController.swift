@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import Alamofire
+import SwiftyJSON
 
 class Main: UIViewController {
 
@@ -19,67 +21,110 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GetPasswords()
+//        GetPasswords()
 
     }
     
     
     func GetPasswords(){
-//      Build API Call
-        let SessionAPIURL = URL(string: KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/password/list")
-        print(SessionAPIURL as Any)
-                                
-//      URL Request
-//        var request = URLRequest(url: SessionAPIURL!)
-                                
-// credentials encoded in base64
-        let username = KeychainWrapper.standard.string(forKey: "LoginUsername")!
-        let password = KeychainWrapper.standard.string(forKey: "LoginPassword")!
-        let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
-        let base64LoginData = loginData.base64EncodedString()
-                                 
-        // create the request
-        var request = URLRequest(url: SessionAPIURL!)
-        request.httpMethod = "GET"
-        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-                                 
-        //making the request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("\(error)")
-                return
-            }
-            print("\(data)")
-            if error == nil && data != nil {
-                            
-//                Parse JSON
-            let decoder = JSONDecoder()
-                            
-                do{
-                    let NCPasswordsGET = try decoder.decode(NCPasswords.self, from: data)
-                    print(NCPasswordsGET)
+        let headers: HTTPHeaders = [
+                    .authorization(username: KeychainWrapper.standard.string(forKey: "LoginUsername")!, password: KeychainWrapper.standard.string(forKey: "LoginPassword")!),
+                    .accept("application/json")
+                ]
+                
+                AF.request(KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/password/list", headers: headers).responseJSON { response in
+        //            debugPrint(response)
+                    switch response.result {
+                        
+                    case.success(let value):
+                        let json = JSON(value)
+                        
+        //                debugPrint(json)
+                        
+                        let list = json.arrayValue
+        //                debugPrint(list)
+                        
+                        let label = list.map{$0["label"].stringValue}
+                        debugPrint(label)
+                        
+                        let id = list.map{$0["id"].stringValue}
+                        debugPrint(id)
+                        
+                        let created = list.map{$0["created"].intValue}
+                        debugPrint(created)
+                        
+                        let updated = list.map{$0["updated"].intValue}
+                        debugPrint(updated)
+                        
+                        let edited = list.map{$0["edited"].intValue}
+                        debugPrint(edited)
+                        
+                        let share = list.map{$0["share"].stringValue}
+                        debugPrint(share)
+                        
+                        let shared = list.map{$0["shared"].boolValue}
+                        debugPrint(shared)
+                        
+                        let revision = list.map{$0["revision"].stringValue}
+                        debugPrint(revision)
+                        
+                        let username = list.map{$0["username"].stringValue}
+                        debugPrint(username)
+                        
+                        let password = list.map{$0["password"].stringValue}
+                        debugPrint(password)
+                        
+                        let notes = list.map{$0["notes"].stringValue}
+                        debugPrint(notes)
+                        
+        //                Custom fields not provided yet
+        //                let customFields =
+        //                debugPrint(customFields)
+                        
+                        let url = list.map{$0["url"].stringValue}
+                        debugPrint(url)
+                        
+                        let status = list.map{$0["status"].intValue}
+                        debugPrint(status)
+                        
+                        let statusCode = list.map{$0["statusCode"].stringValue}
+                        debugPrint(statusCode)
+                        
+                        let hash = list.map{$0["hash"].stringValue}
+                        debugPrint(hash)
+                        
+                        let folder = list.map{$0["folder"].stringValue}
+                        debugPrint(folder)
+                        
+                        let cseKey = list.map{$0["cseKey"].stringValue}
+                        debugPrint(cseKey)
+                        
+                        let cseType = list.map{$0["cseType"].stringValue}
+                        debugPrint(cseType)
+                        
+                        let sseType = list.map{$0["sseType"].stringValue}
+                        debugPrint(sseType)
+                        
+                        let hidden = list.map{$0["hidden"].boolValue}
+                        debugPrint(hidden)
+                        
+                        let trashed = list.map{$0["trashed"].boolValue}
+                        debugPrint(trashed)
+                        
+                        let favorite = list.map{$0["favorite"].boolValue}
+                        debugPrint(favorite)
+                        
+                        let editable = list.map{$0["editable"].boolValue}
+                        debugPrint(editable)
+                        
+                        let client = list.map{$0["client"].stringValue}
+                        debugPrint(client)
+                        
+                    case.failure(let error):
+                        print(error)
+                        
+                    }
                 }
-                catch{
-                    print("Error in JSON parsing")
-                }
-            }
-                                 
-            if let httpStatus = response as? HTTPURLResponse {
-            // check status code returned by the http server
-                print("Password GET status code = \(httpStatus.statusCode)")
-                                            
-//              Debug!!
-                if httpStatus.statusCode != 200 {
-                    print("Username, Password or URL are false or the URL is not reachable!")
-                }
-                else{
-                    
-//              open HomeScreen ViewController
-                                                
-                }
-            }
-        }
-        task.resume()
     }
     
     
