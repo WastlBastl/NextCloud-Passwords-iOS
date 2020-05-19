@@ -1,24 +1,30 @@
 PODS:
   - Alamofire (5.1.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SwiftKeychainWrapper (3.4.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire
+  - SQLite.swift (~> 0.12.0)
   - SwiftKeychainWrapper
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SQLite.swift
     - SwiftKeychainWrapper
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 0983393b2a16efec235d2e9667b2a68c65a48144
+PODFILE CHECKSUM: 241a0d8e01ee71186d15f3625bc8875aff9f3af4
 
 COCOAPODS: 1.9.1

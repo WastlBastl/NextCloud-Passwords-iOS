@@ -16,12 +16,13 @@ class Main: UIViewController {
 //    Example for Global Varibales
     struct GlobalVariables {
         static let APIURL = "/index.php/apps/passwords/api/1.0"
+        static var Debug = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        GetPasswords()
+        GetPasswords()
 
     }
     
@@ -41,92 +42,150 @@ class Main: UIViewController {
                         
         //                debugPrint(json)
                         
-                        let list = json.arrayValue
-        //                debugPrint(list)
+                        let JSONGetPasswords = json.arrayValue
+//                        if Main.GlobalVariables.Debug != false{
+//                            debugPrint(JSONGetPasswords)
+//                        }
                         
-                        let label = list.map{$0["label"].stringValue}
-                        debugPrint(label)
-                        
-                        let id = list.map{$0["id"].stringValue}
-                        debugPrint(id)
-                        
-                        let created = list.map{$0["created"].intValue}
-                        debugPrint(created)
-                        
-                        let updated = list.map{$0["updated"].intValue}
-                        debugPrint(updated)
-                        
-                        let edited = list.map{$0["edited"].intValue}
-                        debugPrint(edited)
-                        
-                        let share = list.map{$0["share"].stringValue}
-                        debugPrint(share)
-                        
-                        let shared = list.map{$0["shared"].boolValue}
-                        debugPrint(shared)
-                        
-                        let revision = list.map{$0["revision"].stringValue}
-                        debugPrint(revision)
-                        
-                        let username = list.map{$0["username"].stringValue}
-                        debugPrint(username)
-                        
-                        let password = list.map{$0["password"].stringValue}
-                        debugPrint(password)
-                        
-                        let notes = list.map{$0["notes"].stringValue}
-                        debugPrint(notes)
-                        
-        //                Custom fields not provided yet
-        //                let customFields =
-        //                debugPrint(customFields)
-                        
-                        let url = list.map{$0["url"].stringValue}
-                        debugPrint(url)
-                        
-                        let status = list.map{$0["status"].intValue}
-                        debugPrint(status)
-                        
-                        let statusCode = list.map{$0["statusCode"].stringValue}
-                        debugPrint(statusCode)
-                        
-                        let hash = list.map{$0["hash"].stringValue}
-                        debugPrint(hash)
-                        
-                        let folder = list.map{$0["folder"].stringValue}
-                        debugPrint(folder)
-                        
-                        let cseKey = list.map{$0["cseKey"].stringValue}
-                        debugPrint(cseKey)
-                        
-                        let cseType = list.map{$0["cseType"].stringValue}
-                        debugPrint(cseType)
-                        
-                        let sseType = list.map{$0["sseType"].stringValue}
-                        debugPrint(sseType)
-                        
-                        let hidden = list.map{$0["hidden"].boolValue}
-                        debugPrint(hidden)
-                        
-                        let trashed = list.map{$0["trashed"].boolValue}
-                        debugPrint(trashed)
-                        
-                        let favorite = list.map{$0["favorite"].boolValue}
-                        debugPrint(favorite)
-                        
-                        let editable = list.map{$0["editable"].boolValue}
-                        debugPrint(editable)
-                        
-                        let client = list.map{$0["client"].stringValue}
-                        debugPrint(client)
-                        
+//                      Parse every Password
+                        for JSONGetPassword in JSONGetPasswords{
+                            if Main.GlobalVariables.Debug != false{
+                                sleep(10)
+                            }
+                            
+                            let label = JSONGetPassword["label"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(label)
+                            }
+                            
+                            let id = JSONGetPassword["id"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(id)
+                            }
+                            
+                            let created = JSONGetPassword["created"].intValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(created)
+                            }
+                            
+                            let updated = JSONGetPassword["updated"].intValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(updated)
+                            }
+                            
+                            let edited = JSONGetPassword["edited"].intValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(edited)
+                            }
+                            
+                            let share = JSONGetPassword["share"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(share)
+                            }
+                            
+                            let shared = JSONGetPassword["shared"].boolValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(shared)
+                            }
+                            
+                            let revision = JSONGetPassword["revision"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(revision)
+                            }
+                            
+                            let username = JSONGetPassword["username"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(username)
+                            }
+                            
+                            let password = JSONGetPassword["password"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(password)
+                            }
+                            
+                            let notes = JSONGetPassword["notes"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(notes)
+                            }
+                            
+//        //                Custom fields not provided yet
+//        //                let customFields =
+//                        if Main.GlobalVariables.Debug != false{
+//        //                  debugPrint(customFields)
+//                        }
+                            
+                            let url = JSONGetPassword["url"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(url)
+                            }
+                            
+                            let status = JSONGetPassword["status"].intValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(status)
+                            }
+                            
+                            let statusCode = JSONGetPassword["statusCode"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(statusCode)
+                            }
+                            
+                            let hash = JSONGetPassword["hash"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(hash)
+                            }
+                            
+                            let folder = JSONGetPassword["folder"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(folder)
+                            }
+                            
+                            let cseKey = JSONGetPassword["cseKey"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(cseKey)
+                            }
+                            
+                            let cseType = JSONGetPassword["cseType"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(cseType)
+                            }
+                            
+                            let sseType = JSONGetPassword["sseType"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(sseType)
+                            }
+                            
+                            let hidden = JSONGetPassword["hidden"].boolValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(hidden)
+                            }
+                            
+                            let trashed = JSONGetPassword["trashed"].boolValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(trashed)
+                            }
+                            
+                            let favorite = JSONGetPassword["favorite"].boolValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(favorite)
+                            }
+                            
+                            let editable = JSONGetPassword["editable"].boolValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(editable)
+                            }
+                            
+                            let client = JSONGetPassword["client"].stringValue
+                            if Main.GlobalVariables.Debug != false{
+                                debugPrint(client)
+                            }
+                        }
+   
                     case.failure(let error):
                         print(error)
                         
                     }
                 }
     }
-    
     
     
     //      check if UserDefaults are empty

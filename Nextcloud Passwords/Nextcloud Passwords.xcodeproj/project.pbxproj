@@ -75,6 +75,7 @@
 		BF801350245DC2EE00BC91AB /* Nextcloud Passwords */ = {
 			isa = PBXGroup;
 			children = (
+				BF8189C62474521100F2B763 /* Test */,
 				BF3325C824608EB800F15976 /* Login */,
 				BFF5B362245F475500E31DF1 /* Launch screen */,
 				BFF5B361245F402400E31DF1 /* Main screen */,
@@ -86,6 +87,13 @@
 				BF80135F245DC2F000BC91AB /* Info.plist */,
 			);
 			path = "Nextcloud Passwords";
+			sourceTree = "<group>";
+		};
+		BF8189C62474521100F2B763 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		BF911621245ED6B2006094B3 /* Database */ = {

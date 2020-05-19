@@ -101,8 +101,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYs-yt-jDC">
-                                <rect key="frame" x="50" y="464.5" width="275" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roI-Yi-8H4">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dhv-ij-I10"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -111,16 +114,16 @@
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hAa-WO-q0s" firstAttribute="centerY" secondItem="Uif-gq-Wmm" secondAttribute="centerY" id="Fxa-Wz-IsN"/>
-                            <constraint firstItem="GYs-yt-jDC" firstAttribute="top" secondItem="hAa-WO-q0s" secondAttribute="bottom" constant="50" id="NBW-iQ-QlK"/>
+                            <constraint firstItem="roI-Yi-8H4" firstAttribute="leading" secondItem="mUq-4d-cL2" secondAttribute="leading" id="Jpu-LQ-aW3"/>
+                            <constraint firstItem="mUq-4d-cL2" firstAttribute="bottom" secondItem="roI-Yi-8H4" secondAttribute="bottom" id="U4h-bc-0KE"/>
                             <constraint firstItem="hAa-WO-q0s" firstAttribute="centerX" secondItem="Uif-gq-Wmm" secondAttribute="centerX" id="V8E-kG-oDe"/>
-                            <constraint firstItem="mUq-4d-cL2" firstAttribute="trailing" secondItem="GYs-yt-jDC" secondAttribute="trailing" constant="50" id="cg1-5X-JeM"/>
-                            <constraint firstItem="GYs-yt-jDC" firstAttribute="leading" secondItem="mUq-4d-cL2" secondAttribute="leading" constant="50" id="mM7-rd-HKL"/>
+                            <constraint firstItem="mUq-4d-cL2" firstAttribute="trailing" secondItem="roI-Yi-8H4" secondAttribute="trailing" id="vCe-9j-kR3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mUq-4d-cL2"/>
                     </view>
                     <navigationItem key="navigationItem" id="JwN-gp-vPk"/>
                     <connections>
-                        <outlet property="ErrorLabel" destination="GYs-yt-jDC" id="Qha-dg-Fsy"/>
+                        <outlet property="ErrorLabel" destination="roI-Yi-8H4" id="yBl-Pc-lhF"/>
                         <outlet property="loginButton" destination="amm-J1-KHQ" id="IIN-7b-plg"/>
                         <outlet property="loginPasswordTextField" destination="gAZ-Wp-xTB" id="vqH-84-Dh8"/>
                         <outlet property="loginURLTextField" destination="DDJ-BD-MrR" id="A5R-rp-DJd"/>
@@ -129,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2X0-Gu-M93" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="-627"/>
+            <point key="canvasLocation" x="805.60000000000002" y="-627.4362818590705"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WZT-1e-Fat">
