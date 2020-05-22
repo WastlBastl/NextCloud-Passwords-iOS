@@ -10,13 +10,15 @@ import UIKit
 import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
+import SQLite3
+import SQLite
 
 class Main: UIViewController {
 
 //    Example for Global Varibales
     struct GlobalVariables {
         static let APIURL = "/index.php/apps/passwords/api/1.0"
-        static var Debug = true
+        static var Debug = false
     }
 
     override func viewDidLoad() {
@@ -43,9 +45,9 @@ class Main: UIViewController {
         //                debugPrint(json)
                         
                         let JSONGetPasswords = json.arrayValue
-//                        if Main.GlobalVariables.Debug != false{
-//                            debugPrint(JSONGetPasswords)
-//                        }
+                        if Main.GlobalVariables.Debug != false{
+                            debugPrint(JSONGetPasswords)
+                        }
                         
 //                      Parse every Password
                         for JSONGetPassword in JSONGetPasswords{
@@ -186,8 +188,6 @@ class Main: UIViewController {
                     }
                 }
     }
-    
-    
     //      check if UserDefaults are empty
 
     
