@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var ErrorLabel: UILabel!
+    @IBOutlet weak var DebugButton: UIButton!
     
     
 //  Declare Variables
@@ -29,6 +30,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Main.GlobalVariables.Debug != false {
+            DebugButton.isHidden = false
+        }
+        else{
+            DebugButton.isHidden = true
+        }
+        
 //      Proof if User has logged in before
         
         if KeyChainURL != nil && KeyChainUsername != nil && KeyChainPassword != nil{
@@ -93,8 +102,36 @@ class LoginViewController: UIViewController {
             
         }
         // End of API Call
-        
-        
+    }
+    
+    
+    @IBAction func DebugButtonTapped(_ sender: Any) {
+
+        self.ErrorLabel.text = ""
+        self.ErrorLabel.backgroundColor = UIColor.black.withAlphaComponent(0)
+                //      Build API Call
+                let headers: HTTPHeaders = [
+                    .authorization(username: KeychainWrapper.standard.string(forKey: "LoginUsername")!, password: KeychainWrapper.standard.string(forKey: "LoginPassword")!),
+                    .accept("application/json")
+                ]
+                
+                AF.request(KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/session/request", headers: headers).response { response in
+        //            debugPrint(response)
+                    let statusCode = response.response?.statusCode
+                    print(statusCode as Any)
+                    
+                    if statusCode != 200 {
+                        self.ErrorLabel.backgroundColor = UIColor.red
+                        self.ErrorLabel.text = "Can not sign in! Please verify your URL, Username and Password!"
+                    }
+                    else{
+                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewcontroller = storyBoard.instantiateViewController(identifier: "MainView")
+                        viewcontroller.modalPresentationStyle = .fullScreen
+                        self.present(viewcontroller, animated: true)
+                    }
+                    
+                }
     }
     
     

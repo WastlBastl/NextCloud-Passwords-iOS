@@ -21,19 +21,116 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MLF-t6-FOM" userLabel="Navigation">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIQ-8u-2eT">
+                                        <rect key="frame" x="0.0" y="19" width="125" height="22"/>
+                                        <state key="normal" image="house" catalog="system"/>
+                                        <connections>
+                                            <action selector="PressHomeButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="5MO-of-Xqh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEa-Il-N8f">
+                                        <rect key="frame" x="125" y="19" width="125" height="22"/>
+                                        <state key="normal" image="star" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVv-Bh-7sX">
+                                        <rect key="frame" x="250" y="19" width="125" height="22"/>
+                                        <state key="normal" image="gear" catalog="system"/>
+                                        <connections>
+                                            <action selector="PressSettingsButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="Lok-ZD-4AG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4Mf-w4-H1B"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="lcz-XD-ure" firstAttribute="trailing" secondItem="MLF-t6-FOM" secondAttribute="trailing" id="7m9-6T-Dek"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="qKC-ey-mfv" secondAttribute="centerY" constant="30.75" id="8Oa-1n-thA"/>
+                            <constraint firstItem="MLF-t6-FOM" firstAttribute="leading" secondItem="lcz-XD-ure" secondAttribute="leading" id="8x6-pY-7D1"/>
+                            <constraint firstItem="MLF-t6-FOM" firstAttribute="bottom" secondItem="lcz-XD-ure" secondAttribute="bottom" id="Kbg-bv-pd2"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="xCs-ye-Wvn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZgY-vx-aOb"/>
+                    <connections>
+                        <outlet property="FavoriteButton" destination="CEa-Il-N8f" id="yVj-MA-ud9"/>
+                        <outlet property="HomeButton" destination="FIQ-8u-2eT" id="h1o-Pl-3zH"/>
+                        <outlet property="SettingsButton" destination="HVv-Bh-7sX" id="rXC-N0-TTd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-Ju-61B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="806" y="91"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="VIY-ut-D6c">
+            <objects>
+                <viewController storyboardIdentifier="Settings" id="eDW-ei-xbf" customClass="SettingsViewController" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h9m-XD-g84">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2eN-If-00W" userLabel="Navigation">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3Z-u5-tb9">
+                                        <rect key="frame" x="0.0" y="19" width="125" height="22"/>
+                                        <state key="normal" image="house" catalog="system"/>
+                                        <connections>
+                                            <action selector="PressHomeButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="lbJ-M8-lhH"/>
+                                            <action selector="PressHomeButton:" destination="eDW-ei-xbf" eventType="touchUpInside" id="n26-FC-WCB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXB-6m-AVH">
+                                        <rect key="frame" x="125" y="19" width="125" height="22"/>
+                                        <state key="normal" image="star" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHo-mO-9Ih">
+                                        <rect key="frame" x="250" y="19" width="125" height="22"/>
+                                        <state key="normal" image="gear" catalog="system"/>
+                                        <connections>
+                                            <action selector="PressSettingsButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="zQb-Ay-6Hr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Hv9-Jz-g2O"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SettingsLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-X1-5X9">
+                                <rect key="frame" x="104" y="10" width="167" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="O2d-X1-5X9" firstAttribute="top" secondItem="vOl-Jp-jCk" secondAttribute="top" constant="10" id="4Aq-Vx-sYf"/>
+                            <constraint firstItem="vOl-Jp-jCk" firstAttribute="bottom" secondItem="2eN-If-00W" secondAttribute="bottom" id="5vY-KB-tX2"/>
+                            <constraint firstItem="O2d-X1-5X9" firstAttribute="leading" secondItem="vOl-Jp-jCk" secondAttribute="leading" constant="104" id="Knr-fh-4Qf"/>
+                            <constraint firstItem="2eN-If-00W" firstAttribute="leading" secondItem="vOl-Jp-jCk" secondAttribute="leading" id="aD1-pH-N5B"/>
+                            <constraint firstItem="vOl-Jp-jCk" firstAttribute="trailing" secondItem="O2d-X1-5X9" secondAttribute="trailing" constant="104" id="r72-h3-VAE"/>
+                            <constraint firstItem="vOl-Jp-jCk" firstAttribute="trailing" secondItem="2eN-If-00W" secondAttribute="trailing" id="uG9-Ct-jeH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vOl-Jp-jCk"/>
+                    </view>
+                    <connections>
+                        <outlet property="FavoriteButton" destination="SXB-6m-AVH" id="c2h-G7-uSI"/>
+                        <outlet property="HomeButton" destination="A3Z-u5-tb9" id="2N4-oN-M1h"/>
+                        <outlet property="SettingsButton" destination="dHo-mO-9Ih" id="GmA-fD-lVo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLd-pY-D1F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="90"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hoA-wC-EVp">
@@ -110,9 +207,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdI-6W-KCJ">
+                                <rect key="frame" x="165" y="20" width="45" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Debug"/>
+                                <connections>
+                                    <action selector="DebugButtonTapped:" destination="6Wx-Em-eEi" eventType="touchUpInside" id="Bfw-N1-1eb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="WdI-6W-KCJ" firstAttribute="leading" secondItem="mUq-4d-cL2" secondAttribute="leading" constant="165" id="42G-HU-VT3"/>
+                            <constraint firstItem="WdI-6W-KCJ" firstAttribute="top" secondItem="mUq-4d-cL2" secondAttribute="top" constant="20" id="75u-z9-Fmt"/>
+                            <constraint firstItem="mUq-4d-cL2" firstAttribute="trailing" secondItem="WdI-6W-KCJ" secondAttribute="trailing" constant="165" id="9sv-RT-9z5"/>
                             <constraint firstItem="hAa-WO-q0s" firstAttribute="centerY" secondItem="Uif-gq-Wmm" secondAttribute="centerY" id="Fxa-Wz-IsN"/>
                             <constraint firstItem="roI-Yi-8H4" firstAttribute="leading" secondItem="mUq-4d-cL2" secondAttribute="leading" id="Jpu-LQ-aW3"/>
                             <constraint firstItem="mUq-4d-cL2" firstAttribute="bottom" secondItem="roI-Yi-8H4" secondAttribute="bottom" id="U4h-bc-0KE"/>
@@ -123,6 +231,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JwN-gp-vPk"/>
                     <connections>
+                        <outlet property="DebugButton" destination="WdI-6W-KCJ" id="33N-dc-ShO"/>
                         <outlet property="ErrorLabel" destination="roI-Yi-8H4" id="yBl-Pc-lhF"/>
                         <outlet property="loginButton" destination="amm-J1-KHQ" id="IIN-7b-plg"/>
                         <outlet property="loginPasswordTextField" destination="gAZ-Wp-xTB" id="vqH-84-Dh8"/>
@@ -154,8 +263,11 @@
     </scenes>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
     <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="house" catalog="system" width="128" height="110"/>
         <image name="loginPassword" width="25" height="25"/>
         <image name="loginURL" width="25" height="25"/>
         <image name="loginUser" width="25" height="25"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

@@ -10,21 +10,23 @@ import UIKit
 import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
-import SQLite3
-import SQLite
 
 class Main: UIViewController {
 
-//    Example for Global Varibales
+    @IBOutlet weak var HomeButton: UIButton!
+    @IBOutlet weak var FavoriteButton: UIButton!
+    @IBOutlet weak var SettingsButton: UIButton!
+    
+    //    Example for Global Varibales
     struct GlobalVariables {
         static let APIURL = "/index.php/apps/passwords/api/1.0"
-        static var Debug = false
+        static var Debug = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GetPasswords()
+        //GetPasswords()
 
     }
     
@@ -192,11 +194,18 @@ class Main: UIViewController {
 
     
     
-
-    @IBAction func pressmeanother(_ sender: Any) {
+    @IBAction func PressHomeButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller = storyBoard.instantiateViewController(identifier: "MainView")
+        viewcontroller.modalPresentationStyle = .fullScreen
+        self.present(viewcontroller, animated: false)
     }
     
-    
-    
+    @IBAction func PressSettingsButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller = storyBoard.instantiateViewController(identifier: "Settings")
+        viewcontroller.modalPresentationStyle = .fullScreen
+        self.present(viewcontroller, animated: false)
+    }
 }
 

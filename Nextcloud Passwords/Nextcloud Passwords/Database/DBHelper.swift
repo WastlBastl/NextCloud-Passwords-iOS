@@ -54,7 +54,7 @@ class DBHelper {
       sqlite3_finalize(createTableStatement)
     }
     
-    func insertTable(insertStatementString: String) {
+    /*func insertTable(insertStatementString: String) {
       var insertStatement: OpaquePointer?
       // 1
       if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) ==
@@ -77,6 +77,7 @@ class DBHelper {
       // 5
       sqlite3_finalize(insertStatement)
     }
+ */
 
     
     
