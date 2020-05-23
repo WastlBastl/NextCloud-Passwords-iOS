@@ -26,7 +26,7 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NCHelper.GetTags()
+        NCHelper.GetPasswords()
         //NCHelper.GetFolder()
 
     }

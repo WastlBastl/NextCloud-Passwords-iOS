@@ -30,13 +30,13 @@ class NCHelper{
                             
                             let JSONGetPasswords = json.arrayValue
                             if Main.GlobalVariables.Debug != false{
-                                debugPrint(JSONGetPasswords)
+                                //debugPrint(JSONGetPasswords)
                             }
                             
     //                      Parse every Password
                             for JSONGetPassword in JSONGetPasswords{
                                 if Main.GlobalVariables.Debug != false{
-                                    sleep(10)
+                                    //sleep(10)
                                 }
                                 
                                 let label = JSONGetPassword["label"].stringValue
@@ -66,7 +66,7 @@ class NCHelper{
                                 
                                 let share = JSONGetPassword["share"].stringValue
                                 if Main.GlobalVariables.Debug != false{
-                                    debugPrint(share)
+                                    debugPrint("Print \(share)")
                                 }
                                 
                                 let shared = JSONGetPassword["shared"].boolValue
@@ -369,6 +369,14 @@ class NCHelper{
             
         } // End of AFRequest
     } // End of GetTags
+    
+    class func GeneratePassword(){
+        let headers: HTTPHeaders = [.authorization(username: KeychainWrapper.standard.string(forKey:"LoginUsername")!,password: KeychainWrapper.standard.string(forKey: "LoginPassword")!),.accept("application/json")
+        ] // End of HTTPHeaders
+        AF.request(KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/tag/list", headers: headers).responseJSON { response in
+                debugPrint(response)
+        } // End of AFRequest
+    } // End of GeneratePassword
     
 } // End of Class
 
