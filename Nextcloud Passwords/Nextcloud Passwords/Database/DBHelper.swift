@@ -12,10 +12,10 @@ import SQLite3
 
 class DBHelper {
 
-    let dbPath: String = "myDb.sqlite"
-    var db:OpaquePointer?
+    static let dbPath: String = "myDb.sqlite"
+    static var db:OpaquePointer?
     
-    func openDatabase() -> OpaquePointer? {
+    class func openDatabase() -> OpaquePointer? {
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent(dbPath)
         var db: OpaquePointer? = nil
@@ -35,7 +35,7 @@ class DBHelper {
             }
     }
     
-    func createTable(createTableString: String) {
+    class func createTable(createTableString: String) {
       // 1
       var createTableStatement: OpaquePointer?
       // 2
@@ -83,4 +83,6 @@ class DBHelper {
     
     
 }
+
+
 
