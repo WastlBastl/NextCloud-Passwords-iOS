@@ -274,5 +274,101 @@ class NCHelper{
         } // End of AFRequest
     } // End of GetFolder
     
+    class func GetTags(){
+        let headers: HTTPHeaders = [.authorization(username: KeychainWrapper.standard.string(forKey:"LoginUsername")!,password: KeychainWrapper.standard.string(forKey: "LoginPassword")!),.accept("application/json")
+        ] // End of HTTPHeaders
+        AF.request(KeychainWrapper.standard.string(forKey: "LoginURL")! + Main.GlobalVariables.APIURL + "/tag/list", headers: headers).responseJSON { response in
+            
+            switch response.result {
+                            
+            case.success(let value):
+                let json = JSON(value)
+            
+                let JSONGetTags = json.arrayValue
+                if Main.GlobalVariables.Debug != false{
+                    debugPrint(JSONGetTags)
+                }
+                for JSONGetTag in JSONGetTags{
+                    if Main.GlobalVariables.Debug != false{
+                        sleep(10)
+                    }
+                    
+                    let tagID = JSONGetTag["id"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagID)
+                    }
+                    
+                    let tagLabel = JSONGetTag["label"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagLabel)
+                    }
+                    
+                    let tagColor = JSONGetTag["color"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagColor)
+                    }
+                    
+                    let tagCreated = JSONGetTag["created"].intValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagCreated)
+                    }
+                    
+                    let tagUpdated = JSONGetTag["updated"].intValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagUpdated)
+                    }
+                    
+                    let tagEdited = JSONGetTag["edited"].intValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagEdited)
+                    }
+                    
+                    let tagRevision = JSONGetTag["revision"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagRevision)
+                    }
+                    
+                    let tagCSEType = JSONGetTag["cseType"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagCSEType)
+                    }
+                    
+                    let tagCSEKey = JSONGetTag["cseKey"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagCSEKey)
+                    }
+                    
+                    let tagSSEType = JSONGetTag["sseType"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagSSEType)
+                    }
+                    
+                    let tagClient = JSONGetTag["client"].stringValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagClient)
+                    }
+                    
+                    let tagHidden = JSONGetTag["hidden"].boolValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagHidden)
+                    }
+                    
+                    let tagTrashed = JSONGetTag["trashed"].boolValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagTrashed)
+                    }
+                    
+                    let tagFavorite = JSONGetTag["favorite"].boolValue
+                    if Main.GlobalVariables.Debug != false{
+                        debugPrint(tagFavorite)
+                    }
+                } // End of Foreach
+            case.failure(let error):
+                print(error)
+            } // End of Switch
+            
+        } // End of AFRequest
+    } // End of GetTags
+    
 } // End of Class
 

@@ -26,7 +26,8 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NCHelper.GetFolder()
+        NCHelper.GetTags()
+        //NCHelper.GetFolder()
 
     }
     
