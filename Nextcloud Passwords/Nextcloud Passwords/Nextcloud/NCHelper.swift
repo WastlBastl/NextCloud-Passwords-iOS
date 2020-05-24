@@ -164,6 +164,9 @@ class NCHelper{
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(client)
                                 }
+                                
+                                DBHelper.insertPasswords(insertID: id, insertLabel: label, insertCreated: created, insertUpdated: updated, insertEdited: edited, insertShare: share, insertShared: shared, insertRevision: revision, insertUsername: username, insertPassword: password, insertNotes: notes, insertUrl: url, insertStatus: status, insertStatusCode: statusCode, insertHash: hash, insertFolder: folder, insertCSEKey: cseKey, insertCSEType: cseType, insertSSEType: sseType, insertHidden: hidden, insertTrashed: trashed, insertFavorite: favorite, insertEditable: editable, insertClient: client)
+                                
                             } // End of ForEach
        
                         case.failure(let error):
