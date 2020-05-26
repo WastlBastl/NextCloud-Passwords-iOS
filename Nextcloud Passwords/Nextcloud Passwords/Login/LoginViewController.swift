@@ -22,11 +22,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var DebugButton: UIButton!
     
     
-//  Declare Variables
+/*//  Declare Variables
     let KeyChainURL = KeychainWrapper.standard.string(forKey: "LoginURL")!
     let KeyChainUsername = KeychainWrapper.standard.string(forKey: "LoginUsername")!
     let KeyChainPassword = KeychainWrapper.standard.string(forKey: "LoginPassword")!
-    
+*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         
 //      Proof if User has logged in before
         
-        if KeyChainURL != nil && KeyChainUsername != nil && KeyChainPassword != nil{
+        if KeychainWrapper.standard.string(forKey: "LoginURL") != nil && KeychainWrapper.standard.string(forKey: "LoginUsername") != nil && KeychainWrapper.standard.string(forKey: "LoginPassword") != nil{
 //            print("Keychain is full")
             let context:LAContext = LAContext()
                 

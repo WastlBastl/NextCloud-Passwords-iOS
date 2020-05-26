@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gZN-Ma-M9m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gZN-Ma-M9m">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -47,20 +47,31 @@
                                     <constraint firstAttribute="height" constant="60" id="4Mf-w4-H1B"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-Zo-6mZ">
+                                <rect key="frame" x="122.5" y="444.5" width="130" height="30.5"/>
+                                <state key="normal" title="The HIT ME Button"/>
+                                <connections>
+                                    <action selector="HitMeAction:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="B9L-X2-FAd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2635597885" green="0.5673190951" blue="0.83532512189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="lcz-XD-ure" firstAttribute="trailing" secondItem="MLF-t6-FOM" secondAttribute="trailing" id="7m9-6T-Dek"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerY" secondItem="qKC-ey-mfv" secondAttribute="centerY" constant="30.75" id="8Oa-1n-thA"/>
                             <constraint firstItem="MLF-t6-FOM" firstAttribute="leading" secondItem="lcz-XD-ure" secondAttribute="leading" id="8x6-pY-7D1"/>
+                            <constraint firstItem="Jqb-Zo-6mZ" firstAttribute="top" secondItem="mgZ-2K-dHr" secondAttribute="bottom" constant="70" id="Erh-y1-jZM"/>
                             <constraint firstItem="MLF-t6-FOM" firstAttribute="bottom" secondItem="lcz-XD-ure" secondAttribute="bottom" id="Kbg-bv-pd2"/>
+                            <constraint firstItem="MLF-t6-FOM" firstAttribute="top" secondItem="Jqb-Zo-6mZ" secondAttribute="bottom" constant="132" id="Ptg-wN-svj"/>
                             <constraint firstItem="mgZ-2K-dHr" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="xCs-ye-Wvn"/>
+                            <constraint firstItem="Jqb-Zo-6mZ" firstAttribute="centerX" secondItem="qKC-ey-mfv" secondAttribute="centerX" id="yqJ-iF-3uY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lcz-XD-ure"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZgY-vx-aOb"/>
                     <connections>
                         <outlet property="FavoriteButton" destination="CEa-Il-N8f" id="yVj-MA-ud9"/>
+                        <outlet property="HiteMeButton" destination="Jqb-Zo-6mZ" id="Xuc-MC-y0r"/>
                         <outlet property="HomeButton" destination="FIQ-8u-2eT" id="h1o-Pl-3zH"/>
                         <outlet property="SettingsButton" destination="HVv-Bh-7sX" id="rXC-N0-TTd"/>
                     </connections>

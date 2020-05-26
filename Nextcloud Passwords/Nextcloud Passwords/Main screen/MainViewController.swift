@@ -10,12 +10,14 @@ import UIKit
 import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class Main: UIViewController {
 
     @IBOutlet weak var HomeButton: UIButton!
     @IBOutlet weak var FavoriteButton: UIButton!
     @IBOutlet weak var SettingsButton: UIButton!
+    @IBOutlet weak var HiteMeButton: UIButton!
     
     //    Example for Global Varibales
     struct GlobalVariables {
@@ -26,9 +28,10 @@ class Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NCHelper.GetPasswords()
-        //NCHelper.GetFolder()
-
+        // Connect to Realm
+        let realm = do{ try Realm() } catch let error as NSError {print(error)}
+        
+        
     }
     
     
@@ -51,5 +54,34 @@ class Main: UIViewController {
         viewcontroller.modalPresentationStyle = .fullScreen
         self.present(viewcontroller, animated: false)
     }
+    
+    
+    @IBAction func HitMeAction(_ sender: Any) {
+
+        
+
+    }// End of Button Hit Me Action
+    
+    func deleteRealm(){
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        let realmURLs = [
+            realmURL,
+            realmURL.appendingPathExtension("lock"),
+            realmURL.appendingPathExtension("note"),
+            realmURL.appendingPathExtension("management")
+        ]
+        for URL in realmURLs{
+            do{
+                try FileManager.default.removeItem(at: URL)
+            }
+            catch{
+                print("Realm could not deleted \(error)")
+            }
+        }// End of for
+    }// End of function
+    
+    
+    
+    
 }
 

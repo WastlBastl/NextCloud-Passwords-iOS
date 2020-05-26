@@ -10,6 +10,8 @@ import Foundation
 import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
+import SQLite
+import SQLite3
 
 class NCHelper{
     
@@ -49,17 +51,17 @@ class NCHelper{
                                     debugPrint(id)
                                 }
                                 
-                                let created = JSONGetPassword["created"].intValue
+                                let created = JSONGetPassword["created"].int32Value
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(created)
                                 }
                                 
-                                let updated = JSONGetPassword["updated"].intValue
+                                let updated = JSONGetPassword["updated"].int32Value
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(updated)
                                 }
                                 
-                                let edited = JSONGetPassword["edited"].intValue
+                                let edited = JSONGetPassword["edited"].int32Value
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(edited)
                                 }
@@ -69,7 +71,15 @@ class NCHelper{
                                     debugPrint("Print \(share)")
                                 }
                                 
+                                var sharedINT: Int32
                                 let shared = JSONGetPassword["shared"].boolValue
+                                // Convert Bool to INT
+                                if shared == false {
+                                    sharedINT = 0
+                                }
+                                else{
+                                    sharedINT = 1
+                                }
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(shared)
                                 }
@@ -105,7 +115,7 @@ class NCHelper{
                                     debugPrint(url)
                                 }
                                 
-                                let status = JSONGetPassword["status"].intValue
+                                let status = JSONGetPassword["status"].int32Value
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(status)
                                 }
@@ -140,22 +150,54 @@ class NCHelper{
                                     debugPrint(sseType)
                                 }
                                 
+                                var hiddenINT: Int32
                                 let hidden = JSONGetPassword["hidden"].boolValue
+                                // Convert Bool to INT
+                                if hidden == false {
+                                    hiddenINT = 0
+                                }
+                                else{
+                                    hiddenINT = 1
+                                }
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(hidden)
                                 }
                                 
+                                var trashedINT: Int32
                                 let trashed = JSONGetPassword["trashed"].boolValue
+                                if trashed == false {
+                                    trashedINT = 0
+                                }
+                                else{
+                                    trashedINT = 1
+                                }
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(trashed)
+                                    debugPrint(trashedINT)
                                 }
                                 
+                                var favoriteINT: Int32
                                 let favorite = JSONGetPassword["favorite"].boolValue
+                                // Convert Bool to INT
+                                if favorite == false {
+                                    favoriteINT = 0
+                                }
+                                else{
+                                    favoriteINT = 1
+                                }
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(favorite)
                                 }
                                 
+                                var editableINT: Int32
                                 let editable = JSONGetPassword["editable"].boolValue
+                                // Convert Bool to INT
+                                if editable == false {
+                                    editableINT = 0
+                                }
+                                else{
+                                    editableINT = 1
+                                }
                                 if Main.GlobalVariables.Debug != false{
                                     debugPrint(editable)
                                 }
@@ -165,8 +207,44 @@ class NCHelper{
                                     debugPrint(client)
                                 }
                                 
-                                DBHelper.insertPasswords(insertID: id, insertLabel: label, insertCreated: created, insertUpdated: updated, insertEdited: edited, insertShare: share, insertShared: shared, insertRevision: revision, insertUsername: username, insertPassword: password, insertNotes: notes, insertUrl: url, insertStatus: status, insertStatusCode: statusCode, insertHash: hash, insertFolder: folder, insertCSEKey: cseKey, insertCSEType: cseType, insertSSEType: sseType, insertHidden: hidden, insertTrashed: trashed, insertFavorite: favorite, insertEditable: editable, insertClient: client)
-                                
+                                let insertStatementString = "insert into passwords (id, created, updated, edited, share, shared, revision, label, username, password, notes, url, status, statusCode, hash, folder, cseKey, cseType, sseType, hidden, trashed, favorite, editable, client) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+                                var insertStatement: OpaquePointer?
+                                if sqlite3_prepare_v2(DBHelper.db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                                            
+                                    sqlite3_bind_text(insertStatement, 1, id, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 2, label, -1, nil)
+                                    sqlite3_bind_int(insertStatement, 3, created)
+                                    sqlite3_bind_int(insertStatement, 4, updated)
+                                    sqlite3_bind_int(insertStatement, 5, edited)
+                                    sqlite3_bind_text(insertStatement, 6, share, -1, nil)
+                                    sqlite3_bind_int(insertStatement, 7, sharedINT)
+                                    sqlite3_bind_text(insertStatement, 8, revision, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 9, username, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 10, password, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 11, notes, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 12, url, -1, nil)
+                                    sqlite3_bind_int(insertStatement, 13, status)
+                                    sqlite3_bind_text(insertStatement, 14, statusCode, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 15, hash, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 16, folder, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 17, cseKey, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 18, cseType, -1, nil)
+                                    sqlite3_bind_text(insertStatement, 19, sseType, -1, nil)
+                                    sqlite3_bind_int(insertStatement, 20, hiddenINT)
+                                    sqlite3_bind_int(insertStatement, 21, trashedINT)
+                                    sqlite3_bind_int(insertStatement, 22, favoriteINT)
+                                    sqlite3_bind_int(insertStatement, 23, editableINT)
+                                    sqlite3_bind_text(insertStatement, 24, client, -1, nil)
+                                            
+                                    if sqlite3_step(insertStatement) == SQLITE_DONE {
+                                          print("\nSuccessfully inserted row.")
+                                    } else {
+                                          print("\nCould not insert row.")
+                                    }
+                                    } else {
+                                        print("\nINSERT statement is not prepared.")
+                                    }
+                                sqlite3_finalize(insertStatement)
                             } // End of ForEach
        
                         case.failure(let error):
@@ -197,7 +275,7 @@ class NCHelper{
                 }
                 for JSONGetFolder in JSONGetFolders{
                     if Main.GlobalVariables.Debug != false{
-                        sleep(10)
+//                        sleep(10)
                     }
                     
                     let folderLabel = JSONGetFolder["label"].stringValue
@@ -380,6 +458,9 @@ class NCHelper{
                 debugPrint(response)
         } // End of AFRequest
     } // End of GeneratePassword
+
+    
     
 } // End of Class
+
 
