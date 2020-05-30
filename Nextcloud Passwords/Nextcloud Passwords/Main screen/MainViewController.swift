@@ -22,17 +22,18 @@ class Main: UIViewController {
     //    Example for Global Varibales
     struct GlobalVariables {
         static let APIURL = "/index.php/apps/passwords/api/1.0"
-        static var Debug = true
+        static var Debug = false
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Connect to Realm
-        let realm = do{ try Realm() } catch let error as NSError {print(error)}
+        let realm = try! Realm()
         
+        NCHelper.GetPasswords()
         
-    }
+    } // End of viewDidLoad
     
     
     
