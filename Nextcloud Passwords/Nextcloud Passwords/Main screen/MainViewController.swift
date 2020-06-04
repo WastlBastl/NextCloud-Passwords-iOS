@@ -27,11 +27,9 @@ class Main: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Connect to Realm
-        let realm = try! Realm()
-        
+
         NCHelper.GetPasswords()
+        RealmHelper.getDataFromRealm()
         
     } // End of viewDidLoad
     
@@ -59,7 +57,7 @@ class Main: UIViewController {
     
     @IBAction func HitMeAction(_ sender: Any) {
 
-        
+        deleteRealm()
 
     }// End of Button Hit Me Action
     

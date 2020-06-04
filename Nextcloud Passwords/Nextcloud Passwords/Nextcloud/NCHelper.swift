@@ -194,7 +194,8 @@ class NCHelper{
                                 myPassword.editable = editable
                                 myPassword.client = client
                                 
-                                return myPassword
+                                RealmHelper.writeToRealm(writeData: myPassword, DataID: id)
+                                
                             } // End of ForEach
        
                         case.failure(let error):
@@ -314,7 +315,7 @@ class NCHelper{
                     myFolder.trashed = folderTrashed
                     myFolder.favorite = folderFavorite
                     
-                    return myFolder
+                    RealmHelper.writeToRealm(writeData: myFolder,DataID: folderID )
                     
                 } // End of ForEach
                 

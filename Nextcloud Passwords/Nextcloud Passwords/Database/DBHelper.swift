@@ -65,4 +65,46 @@ class NCFolder: Object{
     }
 }
 
+class RealmHelper {
+    
+    
+    class func writeToRealm(writeData: Object, DataID: String){
+        
+        do{
+            let realm = try Realm()
+            // Get Data from realm database
+                do{
+                    try realm.write{
+                        realm.add(writeData, update: .modified)
+                    }
+                } catch let error as NSError{
+                    print(error)
+                } // end of second do block // write data to realm
+        } catch let error as NSError{
+            print(error)
+        } // end of first do block // open realm
+    } // End of Function writeToRealm
+    
+    
+    
+    class func getDataFromRealm(){
+        do{
+            let realm = try Realm()
+            let test = realm.objects(NCPassword.self)
+            print(test)
+        } catch let error as NSError{
+            print(error)
+        } // end of first do block
+    } // End of function getdataFromRealm
+}
+
+
+/*
+let GetData = realm.objects(NCPassword.self).filter("id = '\(DataID)'")
+let TestData = GetData.first
+let ID = TestData?.id
+if ID == nil{} // proof if Password Exists on Database
+ 
+ */
+
 
