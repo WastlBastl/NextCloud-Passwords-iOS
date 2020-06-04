@@ -68,7 +68,7 @@ class NCFolder: Object{
 class RealmHelper {
     
     
-    class func writeToRealm(writeData: Object, DataID: String){
+    class func writeToRealm(writeData: Object){
         
         do{
             let realm = try Realm()
@@ -91,11 +91,29 @@ class RealmHelper {
         do{
             let realm = try Realm()
             let test = realm.objects(NCPassword.self)
-            print(test)
         } catch let error as NSError{
             print(error)
         } // end of first do block
     } // End of function getdataFromRealm
+    
+    
+    class func deleteRealm(){
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        let realmURLs = [
+            realmURL,
+            realmURL.appendingPathExtension("lock"),
+            realmURL.appendingPathExtension("note"),
+            realmURL.appendingPathExtension("management")
+        ]
+        for URL in realmURLs{
+            do{
+                try FileManager.default.removeItem(at: URL)
+            }
+            catch{
+                print("Realm could not deleted \(error)")
+            }
+        }// End of for
+    }// End of function
 }
 
 

@@ -10,7 +10,6 @@ import UIKit
 import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
-import RealmSwift
 
 class Main: UIViewController {
 
@@ -29,6 +28,7 @@ class Main: UIViewController {
         super.viewDidLoad()
 
         NCHelper.GetPasswords()
+        NCHelper.GetFolder()
         RealmHelper.getDataFromRealm()
         
     } // End of viewDidLoad
@@ -57,27 +57,11 @@ class Main: UIViewController {
     
     @IBAction func HitMeAction(_ sender: Any) {
 
-        deleteRealm()
+        RealmHelper.deleteRealm()
 
     }// End of Button Hit Me Action
     
-    func deleteRealm(){
-        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
-        let realmURLs = [
-            realmURL,
-            realmURL.appendingPathExtension("lock"),
-            realmURL.appendingPathExtension("note"),
-            realmURL.appendingPathExtension("management")
-        ]
-        for URL in realmURLs{
-            do{
-                try FileManager.default.removeItem(at: URL)
-            }
-            catch{
-                print("Realm could not deleted \(error)")
-            }
-        }// End of for
-    }// End of function
+    
     
     
     

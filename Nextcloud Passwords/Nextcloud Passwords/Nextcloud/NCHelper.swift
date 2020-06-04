@@ -168,7 +168,7 @@ class NCHelper{
                                     debugPrint(client)
                                 }
                                 
-                                var myPassword = NCPassword()
+                                let myPassword = NCPassword()
                                 myPassword.id = id
                                 myPassword.label = label
                                 myPassword.created = created
@@ -194,7 +194,7 @@ class NCHelper{
                                 myPassword.editable = editable
                                 myPassword.client = client
                                 
-                                RealmHelper.writeToRealm(writeData: myPassword, DataID: id)
+                                RealmHelper.writeToRealm(writeData: myPassword)
                                 
                             } // End of ForEach
        
@@ -299,7 +299,7 @@ class NCHelper{
                         debugPrint(folderFavorite)
                     }
                     
-                    var myFolder = NCFolder()
+                    let myFolder = NCFolder()
                     myFolder.id = folderID
                     myFolder.label = folderLabel
                     myFolder.parent = folderParent
@@ -315,7 +315,7 @@ class NCHelper{
                     myFolder.trashed = folderTrashed
                     myFolder.favorite = folderFavorite
                     
-                    RealmHelper.writeToRealm(writeData: myFolder,DataID: folderID )
+                    RealmHelper.writeToRealm(writeData: myFolder)
                     
                 } // End of ForEach
                 
