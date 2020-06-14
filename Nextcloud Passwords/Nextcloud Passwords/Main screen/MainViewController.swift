@@ -103,10 +103,9 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let Folder:FolderCell = self.PasswordsTBL.dequeueReusableCell(withIdentifier: "Folder") as! FolderCell
-        
         Folder.FolderLabel!.text = FolderLabels[indexPath.row]
-        
         return Folder
     }
     
