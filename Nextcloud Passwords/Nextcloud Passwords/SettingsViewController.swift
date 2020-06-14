@@ -11,7 +11,7 @@ import SwiftKeychainWrapper
 
 class SettingsViewController: UIViewController {
 
-    
+
     @IBOutlet weak var HomeButton: UIButton!
     @IBOutlet weak var FavoriteButton: UIButton!
     @IBOutlet weak var SettingsButton: UIButton!
@@ -21,12 +21,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var ShareButton: UIButton!
     @IBOutlet weak var ReportABugButton: UIButton!
     
+    let animals: [String] = ["Horse", "cow", "Camel", "Sheep", "Goat"]
+    let celReuseIdentifier = "cell"
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        LogOutButton.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     } // End of function viewDidLoad
@@ -59,7 +60,11 @@ class SettingsViewController: UIViewController {
             UIApplication.shared.open(url)
         } // End of if
     } // End of function PressDonateButton
-
-
     
+    @IBAction func PressFavoriteButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller = storyBoard.instantiateViewController(identifier: "SettingsTable")
+        viewcontroller.modalPresentationStyle = .fullScreen
+        self.present(viewcontroller, animated: false)
+    }
 } // End of class

@@ -12,6 +12,7 @@
 		BF1EE2E324781FE100004D14 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1EE2E224781FE100004D14 /* SettingsViewController.swift */; };
 		BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3325C924608F3700F15976 /* LoginViewController.swift */; };
 		BF42E451247940030064DCBC /* NCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42E450247940030064DCBC /* NCHelper.swift */; };
+		BF5A3C85248FD3970006C389 /* SettingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5A3C84248FD3970006C389 /* SettingsTable.swift */; };
 		BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801351245DC2EE00BC91AB /* AppDelegate.swift */; };
 		BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801353245DC2EE00BC91AB /* SceneDelegate.swift */; };
 		BF801356245DC2EE00BC91AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF801355245DC2EE00BC91AB /* MainViewController.swift */; };
@@ -26,6 +27,7 @@
 		BF1EE2E224781FE100004D14 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "Nextcloud Passwords/SettingsViewController.swift"; sourceTree = "<group>"; };
 		BF3325C924608F3700F15976 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF42E450247940030064DCBC /* NCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCHelper.swift; sourceTree = "<group>"; };
+		BF5A3C84248FD3970006C389 /* SettingsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTable.swift; path = "Nextcloud Passwords/SettingsTable.swift"; sourceTree = "<group>"; };
 		BF80134E245DC2EE00BC91AB /* Nextcloud Passwords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nextcloud Passwords.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF801351245DC2EE00BC91AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF801353245DC2EE00BC91AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		BF1EE2E124781FA200004D14 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BF5A3C84248FD3970006C389 /* SettingsTable.swift */,
 				BF1EE2E224781FE100004D14 /* SettingsViewController.swift */,
 			);
 			name = Settings;
@@ -274,6 +277,7 @@
 				BF42E451247940030064DCBC /* NCHelper.swift in Sources */,
 				BF801354245DC2EE00BC91AB /* SceneDelegate.swift in Sources */,
 				BF1EE2E324781FE100004D14 /* SettingsViewController.swift in Sources */,
+				BF5A3C85248FD3970006C389 /* SettingsTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

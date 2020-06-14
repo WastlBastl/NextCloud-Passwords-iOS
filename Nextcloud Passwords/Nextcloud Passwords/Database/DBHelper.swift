@@ -90,7 +90,10 @@ class RealmHelper {
     class func getDataFromRealm(){
         do{
             let realm = try Realm()
-            let test = realm.objects(NCPassword.self)
+            let test = realm.objects(NCFolder.self).filter("parent == '00000000-0000-0000-0000-000000000000' AND trashed == 0")
+            for test1 in test {
+                //print(test1)
+            }
         } catch let error as NSError{
             print(error)
         } // end of first do block
