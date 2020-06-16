@@ -88,7 +88,7 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         PassTBL.append(PasswordClass.init(SectionName: "Folder", RowName: FolderLabels, ID: FolderIDs))
         PassTBL.append(PasswordClass.init(SectionName: "Password", RowName: PasswordLabels, ID: PasswordIDs))
-        
+    
     } // End of viewDidLoad
     
     
@@ -135,32 +135,21 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*if SettingsTBL[indexPath.section].RowName[indexPath.row] == "Log out"{
-            KeychainWrapper.standard.set("", forKey: "LoginURL")
-            KeychainWrapper.standard.set("", forKey: "LoginUsername")
-            KeychainWrapper.standard.set("", forKey: "LoginPassword")
-            RealmHelper.deleteRealm()
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let viewcontroller = storyBoard.instantiateViewController(identifier: "LoginViewController")
-            viewcontroller.modalPresentationStyle = .fullScreen
-            self.present(viewcontroller, animated: false)
-        }
-        else{
-            if let url = URL(string: SettingsTBL[indexPath.section].RowURLs[indexPath.row]!) {
-                UIApplication.shared.open(url)
-            } // End of if
-         }*/
         if indexPath.section == 0 {
             print("Something \(indexPath.section)")
         }
         else{
-            UIPasteboard.general.string = "Hello world"
-            print("Print \(String(describing: PassTBL[indexPath.section].ID[indexPath.row]))")
-            
+            // Create String for PasswordID to search in Database
+            // Get ID of row when tapped and replace some Strings.
+            let str = "\(String(describing: PassTBL[indexPath.section].ID[indexPath.row]))"
+            let replace = str.replacingOccurrences(of: "Optional", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "\"", with: "'")
+
+            // Open DB Connection, filter for Password ID and copy them to clipboard
             do{
                 let realm = try Realm()
-                let PasswordObject = realm.objects(NCPassword.self).filter("folder == \(String(describing: PassTBL[indexPath.section].ID[indexPath.row]))") // Got an error
-                print(PasswordObject)
+                let PasswordObject = realm.objects(NCPassword.self).filter("id == \(replace)")
+                //Copy to clipboard
+                UIPasteboard.general.string = PasswordObject.first?.password.replacingOccurrences(of: "Optional", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "\"", with: "") ?? ""
             } catch let error as NSError{
                 print(error)
             } // end of first do block
