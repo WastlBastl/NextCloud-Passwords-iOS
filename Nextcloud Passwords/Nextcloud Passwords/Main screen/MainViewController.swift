@@ -21,6 +21,18 @@ class PasswordCell: UITableViewCell {
     
 }
 
+class PasswordClass {
+    var SectionName: String?
+    var RowName: [String?]
+    var ID: [String?]
+    
+    init(SectionName: String, RowName: [String], ID: [String]) {
+        self.SectionName = SectionName
+        self.RowName = RowName
+        self.ID = ID
+    }
+}
+
 
 class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -31,6 +43,10 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var FolderLabels = [String]()
+    var FolderIDs = [String]()
+    var PasswordLabels = [String]()
+    var PasswordIDs = [String]()
+    var PassTBL = [PasswordClass]()
     
     //    Example for Global Varibales
     struct GlobalVariables {
@@ -47,6 +63,31 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         PasswordsTBL.dataSource = self
         PasswordsTBL.delegate = self
+        
+        do{
+            let realm = try Realm()
+            let rootFolders = realm.objects(NCFolder.self).filter("parent == '00000000-0000-0000-0000-000000000000'")
+            for rootFolder in rootFolders{
+                FolderLabels.append(rootFolder.label)
+                FolderIDs.append(rootFolder.id)
+            }
+        } catch let error as NSError{
+            print(error)
+        } // end of first do block
+        
+        do{
+            let realm = try Realm()
+            let rootPasswords = realm.objects(NCPassword.self).filter("folder == '00000000-0000-0000-0000-000000000000'")
+            for rootPassword in rootPasswords{
+                PasswordLabels.append(rootPassword.label)
+                PasswordIDs.append(rootPassword.id)
+            }
+        } catch let error as NSError{
+            print(error)
+        } // end of first do block
+        
+        PassTBL.append(PasswordClass.init(SectionName: "Folder", RowName: FolderLabels, ID: FolderIDs))
+        PassTBL.append(PasswordClass.init(SectionName: "Password", RowName: PasswordLabels, ID: PasswordIDs))
         
     } // End of viewDidLoad
     
@@ -71,42 +112,59 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.present(viewcontroller, animated: false)
     }
     
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var numberOfRootFolders = 0
-        var numberofRootPasswords = 0
-        do{
-            let realm = try Realm()
-            let rootFolders = realm.objects(NCFolder.self).filter("parent == '00000000-0000-0000-0000-000000000000'")
-            numberOfRootFolders = rootFolders.count
-            for rootFolder in rootFolders{
-                FolderLabels.append(rootFolder.label)
-            }
-        } catch let error as NSError{
-            print(error)
-        } // end of first do block
-        
-        do{
-            let realm = try Realm()
-            let rootPasswords = realm.objects(NCPassword.self).filter("folder == '00000000-0000-0000-0000-000000000000'")
-            numberofRootPasswords = rootPasswords.count
-            for rootPassword in rootPasswords{
-               print("Password Label: \(rootPassword.label)")
-            }
-        } catch let error as NSError{
-            print(error)
-        } // end of first do block
-        
-        let numberOfRows = numberOfRootFolders + numberofRootPasswords
-        print("All Rows: \(numberOfRows)")
-        return numberOfRows
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return PassTBL.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return PassTBL[section].RowName.count
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let Folder:FolderCell = self.PasswordsTBL.dequeueReusableCell(withIdentifier: "Folder") as! FolderCell
-        Folder.FolderLabel!.text = FolderLabels[indexPath.row]
-        return Folder
+        if indexPath.section == 0 {
+            let Folder:FolderCell = self.PasswordsTBL.dequeueReusableCell(withIdentifier: "Folder") as! FolderCell
+            Folder.FolderLabel!.text = PassTBL[indexPath.section].RowName[indexPath.row]
+            return Folder
+        }
+        else {
+            let Password:PasswordCell = self.PasswordsTBL.dequeueReusableCell(withIdentifier: "Password") as! PasswordCell
+            Password.passwordLabel!.text = PassTBL[indexPath.section].RowName[indexPath.row]
+            return Password
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /*if SettingsTBL[indexPath.section].RowName[indexPath.row] == "Log out"{
+            KeychainWrapper.standard.set("", forKey: "LoginURL")
+            KeychainWrapper.standard.set("", forKey: "LoginUsername")
+            KeychainWrapper.standard.set("", forKey: "LoginPassword")
+            RealmHelper.deleteRealm()
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let viewcontroller = storyBoard.instantiateViewController(identifier: "LoginViewController")
+            viewcontroller.modalPresentationStyle = .fullScreen
+            self.present(viewcontroller, animated: false)
+        }
+        else{
+            if let url = URL(string: SettingsTBL[indexPath.section].RowURLs[indexPath.row]!) {
+                UIApplication.shared.open(url)
+            } // End of if
+         }*/
+        if indexPath.section == 0 {
+            print("Something \(indexPath.section)")
+        }
+        else{
+            UIPasteboard.general.string = "Hello world"
+            print("Print \(String(describing: PassTBL[indexPath.section].ID[indexPath.row]))")
+            
+            do{
+                let realm = try Realm()
+                let PasswordObject = realm.objects(NCPassword.self).filter("folder == \(String(describing: PassTBL[indexPath.section].ID[indexPath.row]))") // Got an error
+                print(PasswordObject)
+            } catch let error as NSError{
+                print(error)
+            } // end of first do block
+        }
     }
     
     

@@ -18,6 +18,7 @@
 		BF80135B245DC2F000BC91AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF80135A245DC2F000BC91AB /* Assets.xcassets */; };
 		BF80135E245DC2F000BC91AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF80135C245DC2F000BC91AB /* LaunchScreen.storyboard */; };
 		BF80136C245DD72600BC91AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF80136A245DD72600BC91AB /* Main.storyboard */; };
+		BFE1A125249935BC00513EA3 /* PasswordShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1A124249935BC00513EA3 /* PasswordShow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BF80135D245DC2F000BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF80135F245DC2F000BC91AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF80136B245DD72600BC91AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFE1A124249935BC00513EA3 /* PasswordShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordShow.swift; sourceTree = "<group>"; };
 		C93C290146BC91193976EBDE /* Pods_Nextcloud_Passwords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nextcloud_Passwords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2066F17EF75487E2324D3E /* Pods-Nextcloud Passwords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nextcloud Passwords.release.xcconfig"; path = "Target Support Files/Pods-Nextcloud Passwords/Pods-Nextcloud Passwords.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				BF80136A245DD72600BC91AB /* Main.storyboard */,
+				BFE1A124249935BC00513EA3 /* PasswordShow.swift */,
 				BF801355245DC2EE00BC91AB /* MainViewController.swift */,
 			);
 			path = "Main screen";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3325CA24608F3700F15976 /* LoginViewController.swift in Sources */,
+				BFE1A125249935BC00513EA3 /* PasswordShow.swift in Sources */,
 				BF801356245DC2EE00BC91AB /* MainViewController.swift in Sources */,
 				BF1EE2E0247805AA00004D14 /* DBHelper.swift in Sources */,
 				BF801352245DC2EE00BC91AB /* AppDelegate.swift in Sources */,

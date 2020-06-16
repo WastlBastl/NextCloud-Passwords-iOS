@@ -53,10 +53,9 @@ class SettingsTable: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         cell.textLabel!.text = SettingsTBL[indexPath.section].RowName[indexPath.row]
-        
         return cell
     }
     

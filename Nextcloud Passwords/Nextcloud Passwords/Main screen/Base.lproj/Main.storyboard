@@ -122,6 +122,78 @@
             </objects>
             <point key="canvasLocation" x="806" y="91"/>
         </scene>
+        <!--Password Show-->
+        <scene sceneID="hQJ-Jf-SYZ">
+            <objects>
+                <viewController storyboardIdentifier="PasswordShow" id="jlb-nv-E7t" customClass="PasswordShow" customModule="Nextcloud_Passwords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QkD-hF-3bP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mVZ-2l-4dV" userLabel="Navigation">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGM-DY-v3e">
+                                        <rect key="frame" x="0.0" y="19" width="125" height="22"/>
+                                        <state key="normal" image="house" catalog="system"/>
+                                        <connections>
+                                            <action selector="PressHomeButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="aTh-78-DnC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8A-Hk-b6Q">
+                                        <rect key="frame" x="125" y="19" width="125" height="22"/>
+                                        <state key="normal" image="star" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-Qy-ON4">
+                                        <rect key="frame" x="250" y="19" width="125" height="22"/>
+                                        <state key="normal" image="gear" catalog="system"/>
+                                        <connections>
+                                            <action selector="PressSettingsButton:" destination="TnZ-9h-UGU" eventType="touchUpInside" id="Hke-Lm-Pmd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="hQx-ff-ZbQ"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXA-oL-Qod">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OV6-av-H4F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zif-RR-Xip">
+                                <rect key="frame" x="16" y="89" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rst-Qo-F2J">
+                                <rect key="frame" x="16" y="149" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PXA-oL-Qod" firstAttribute="leading" secondItem="yYD-9Q-fQo" secondAttribute="leading" id="83t-PC-yZq"/>
+                            <constraint firstItem="PXA-oL-Qod" firstAttribute="top" secondItem="yYD-9Q-fQo" secondAttribute="top" id="Kfx-o0-myS"/>
+                            <constraint firstItem="yYD-9Q-fQo" firstAttribute="trailing" secondItem="PXA-oL-Qod" secondAttribute="trailing" id="MbI-0X-uoO"/>
+                            <constraint firstItem="mVZ-2l-4dV" firstAttribute="bottom" secondItem="yYD-9Q-fQo" secondAttribute="bottom" id="fBY-p3-zrs"/>
+                            <constraint firstItem="mVZ-2l-4dV" firstAttribute="trailing" secondItem="yYD-9Q-fQo" secondAttribute="trailing" id="oxk-FC-UPS"/>
+                            <constraint firstItem="mVZ-2l-4dV" firstAttribute="leading" secondItem="yYD-9Q-fQo" secondAttribute="leading" id="pvu-M7-1Fr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yYD-9Q-fQo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66x-5v-mUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="757"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="VIY-ut-D6c">
             <objects>
