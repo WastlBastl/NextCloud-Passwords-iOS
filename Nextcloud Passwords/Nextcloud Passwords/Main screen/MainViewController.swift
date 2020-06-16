@@ -10,17 +10,21 @@ import UIKit
 import SwiftKeychainWrapper
 import RealmSwift
 
+
+// Class for the FolderCell
 class FolderCell: UITableViewCell {
     @IBOutlet weak var FolderLabel: UILabel!
     
     
 }
 
+// Class for the PasswordCell
 class PasswordCell: UITableViewCell {
     @IBOutlet weak var passwordLabel: UILabel!
     
 }
 
+// Class for the TableView to get Sections and Rows in Sections.
 class PasswordClass {
     var SectionName: String?
     var RowName: [String?]
@@ -41,14 +45,19 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var SettingsButton: UIButton!
     @IBOutlet weak var PasswordsTBL: UITableView!
     
-    
+    // Variables
+    // To get the labels of the folder to put them then into PassTBL
     var FolderLabels = [String]()
+    // To get the ids of the folder to put them then into PassTBL
     var FolderIDs = [String]()
+    // To get the labels of the password to put them then into PassTBL
     var PasswordLabels = [String]()
+    // To get the ids of the password to put them then into PassTBL
     var PasswordIDs = [String]()
+    // To get sections, rows and ids
     var PassTBL = [PasswordClass]()
     
-    //    Example for Global Varibales
+    // Global Varibales
     struct GlobalVariables {
         static let APIURL = "/index.php/apps/passwords/api/1.0"
         static var Debug = false
@@ -64,9 +73,12 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         PasswordsTBL.dataSource = self
         PasswordsTBL.delegate = self
         
+        // Get "Root" folders from realm database
         do{
             let realm = try Realm()
+            // filter for "root" folders
             let rootFolders = realm.objects(NCFolder.self).filter("parent == '00000000-0000-0000-0000-000000000000'")
+            // Add folders to defined variables
             for rootFolder in rootFolders{
                 FolderLabels.append(rootFolder.label)
                 FolderIDs.append(rootFolder.id)
@@ -75,9 +87,12 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print(error)
         } // end of first do block
         
+        // get passwords in "root" view on nextcloud password
         do{
             let realm = try Realm()
+            // filter for passwords
             let rootPasswords = realm.objects(NCPassword.self).filter("folder == '00000000-0000-0000-0000-000000000000'")
+            // Add passwords to defined variables
             for rootPassword in rootPasswords{
                 PasswordLabels.append(rootPassword.label)
                 PasswordIDs.append(rootPassword.id)
@@ -86,6 +101,7 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print(error)
         } // end of first do block
         
+        // add data to PassTBL
         PassTBL.append(PasswordClass.init(SectionName: "Folder", RowName: FolderLabels, ID: FolderIDs))
         PassTBL.append(PasswordClass.init(SectionName: "Password", RowName: PasswordLabels, ID: PasswordIDs))
     
@@ -97,7 +113,7 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //      check if UserDefaults are empty
 
     
-    
+    // Press HomeButton to get to the MainView
     @IBAction func PressHomeButton(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroller = storyBoard.instantiateViewController(identifier: "MainView")
@@ -105,6 +121,7 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.present(viewcontroller, animated: false)
     }
     
+    // Press SettingsButton to get to the SettingsView/SettingsTable
     @IBAction func PressSettingsButton(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroller = storyBoard.instantiateViewController(identifier: "SettingsTable")
@@ -112,22 +129,26 @@ class Main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.present(viewcontroller, animated: false)
     }
     
+    // Get number of sections from PassTBL
     func numberOfSections(in tableView: UITableView) -> Int {
         return PassTBL.count
     }
     
+    // Get number of Rows in Section from PassTBL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PassTBL[section].RowName.count
     }
     
-    
+    // Define which cell is shown for row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            // custom cell for Folders
             let Folder:FolderCell = self.PasswordsTBL.dequeueReusableCell(withIdentifier: "Folder") as! FolderCell
             Folder.FolderLabel!.text = PassTBL[indexPath.section].RowName[indexPath.row]
             return Folder
         }
         else {
+            // custom cell for Passwords
             let Password:PasswordCell = self.PasswordsTBL.dequeueReusableCell(withIdentifier: "Password") as! PasswordCell
             Password.passwordLabel!.text = PassTBL[indexPath.section].RowName[indexPath.row]
             return Password
