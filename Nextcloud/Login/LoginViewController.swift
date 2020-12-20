@@ -104,6 +104,10 @@ class LoginViewController: UIViewController {
 //                self.present(viewcontroller, animated: true)
                 self.ErrorLabel.backgroundColor = UIColor.green
                 self.ErrorLabel.text = "Login successfull!"
+                let mainView: UIStoryboard = UIStoryboard(name: "MainScreen", bundle: nil)
+                let MainViewVC = mainView.instantiateViewController(identifier: "MainScreen") as! MainScreenViewController
+                MainViewVC.modalPresentationStyle = .fullScreen
+                self.present(MainViewVC, animated: false, completion: nil)
             } // End of if/else Block
             
         }// End of API Call

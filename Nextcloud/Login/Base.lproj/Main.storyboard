@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="75"/>
         </scene>
-        <!--Main Screen View Controller-->
+        <!--MainScreen-->
         <scene sceneID="yuo-tR-A8J">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainScreen" referencedIdentifier="Main Screen View Controller" id="FOf-RQ-zhc" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MainScreen" id="FOf-RQ-zhc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ipc-6V-I9b"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4d-ag-yHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
